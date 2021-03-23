@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { FestivalsComponent } from './festivals/festivals.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     RootNavComponent,
     LoginComponent,
     HomeComponent,
+    FestivalsComponent,
     
   ],
   imports: [
