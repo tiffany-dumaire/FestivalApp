@@ -13,18 +13,18 @@ const password = process.env.DB_PASS || 'ProjetSEP-2020';
 const database = process.env.DB_DATABASE || 'projetsep_festival_des_jeux';
 
 // Create the connection with required details
-const con = mysql.createConnection({
+const connexion = mysql.createConnection({
   host, user, password, database,
 });
 
 const query = "SELECT * FROM Festival";
  
 // make to connection to the database.
-con.connect(function(err) {
+connexion.connect(function(err) {
   if (err) throw err;
 
   // if connection is successful
-  con.query(query, (err, result, fields) => {
+  connexion.query(query, (err, result, fields) => {
     // if any error while executing above query, throw error
     if (err) throw err;
 
@@ -32,3 +32,5 @@ con.connect(function(err) {
     console.log(result);
  });
 });
+
+module.exports = connexion
