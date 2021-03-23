@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FestivalsComponent } from './festivals/festivals.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FestivalsComponent } from './festivals/festivals.component';
     LoginComponent,
     HomeComponent,
     FestivalsComponent,
+    AboutComponent,
     
   ],
   imports: [
