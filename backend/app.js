@@ -1,22 +1,23 @@
-var express = require('express');
+const express = require('express')
+const dbConfig = require('./dbConfig');
+const connection = require('./helpers/connection');
+const query = require('./helpers/query');
+const festivalsRouter = require('./routes/festival')
+const app = express()
+const port = 3000;
 
-var app=express();
+app.use('/festival', festivalsRouter)
 
-app.get("/",(req,resp)=> {
-    resp.setHeader("content-type","text/html");
-    resp.send("<h3>Hello Express<h3>");
-});
 
-app.get("/books/:code",(req,resp)=> {
-    resp.setHeader("content-type","application/json");
-    var infos = {
-        name:"med", email:"test@test.net",code:req.params.code
-    };
-    resp.send(JSON.stringify(infos));
-});
+app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(7000,()=> {
-    console.log("Server started")
-});
+app.get('/list', async (req, res) => {
+  const conn = await connection(dbConfig).catch(e => {}) 
+  const results = await query(conn, 'SELECT * FROM Festival').catch(console.log);
+  res.json({ results });
+})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
 
 module.exports = app;

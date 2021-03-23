@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "festival-du-jeu-backend-express",
   "version": "1.0.0",
   "description": "(festival-backend-app)",
   "main": "server.js)",
@@ -10,6 +10,7 @@
   "author": " (Tiffany Dumaire - Aaron Lazaroo - Clarence Rouvel)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   }
 }
