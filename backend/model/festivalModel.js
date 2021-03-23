@@ -1,4 +1,4 @@
-const database = require('../database')
+const database = require('../database/dbConfig')
 
 async function createFestival(nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2E1,m2E2,m2E3,prixE1,prixE2,prixE3){
     try {
@@ -7,5 +7,6 @@ async function createFestival(nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2
         throw error
     }
 }
+
 
 module.exports = {createFestival}
