@@ -8,5 +8,13 @@ async function createFestival(){
     }
 }
 
+async function getFestivals(){
+    try{
+        return await festival.getFestivals()
+    }
+    catch (error) {
+        throw error
+    }
+}
 
-module.exports = {createFestival}
+module.exports = {createFestival,getFestivals}

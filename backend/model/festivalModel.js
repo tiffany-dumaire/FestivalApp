@@ -8,5 +8,14 @@ async function createFestival(nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2
     }
 }
 
+async function getFestivals() {
+    try {
+        const {festivals} = await database.query('SELECT * FROM Festival;')
+        return festivals
+    }
+    catch (error) {
+        throw error
+    }
+}
 
-module.exports = {createFestival}
+module.exports = {createFestival,getFestivals}

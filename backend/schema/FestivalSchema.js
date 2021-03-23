@@ -1,6 +1,10 @@
-const mysql = require('sequelize');
+const mysql = require('mysql');
 
 const FestivalSchema = mysql.Schema({
+    idFestival:{
+        type: Number,
+        required:true
+    },
     nomFestival: {
         type: String,
         required: true
@@ -46,3 +50,5 @@ const FestivalSchema = mysql.Schema({
         required: true
     }
 });
+
+module.exports = FestivalSchema;
