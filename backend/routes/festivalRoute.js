@@ -16,13 +16,6 @@ const db = require('../database/dbConfig');
 // ----------------------------------------------------
 // ---------- get all or some values
 
-router.get('/festival', (req,res,next)=> {
-    db.queryAll('Festivals',(result) => {
-        res.send(result);
-        console.log(result);
-    });
-});
-
 /* router.get('/festival', function(req,res,next){
    if (!req.query['nomFestival']) next('route');
    else next();
@@ -33,14 +26,14 @@ router.get('/festival', (req,res,next)=> {
        res.send(result);
    });
 }); */
-/*
+
 router.get('/festival', function(req,res,next){ // get all festival
    // console.log("get all festival");
-   db.queryAllOrderedDesc('Festivals','nomFestival,annee',function(result){
+   db.queryAllOrderedDesc('Festivals','nomFestival',function(result){
        // console.log(result);
        res.send(result);
    });
-}); */
+}); 
 
 
 // ----------------------------------------------------
