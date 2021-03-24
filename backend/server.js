@@ -1,30 +1,36 @@
-const express = require('express')
-//const bodyParser = require('body-parser');
-//const cors = require('cors');
+// ----------- express init
+const express = require('express');
 const app = express();
 
-var corsOptions = {
-    origin: "http://localhost:4200",
-    optionsSuccessStatus: 204
-};
 
-//app.use(cors(corsOptions));
-//app.use(bodyParser.json())npm;
-//app.use(bodyParser.urlencoded({extended : true}));
+// ----------- cors : accept request from another domain
+const cors = require('cors')
 
-//const database = require('./model');
-//database.sequelize.sync();
+var corsOptions = { // entries can come only from....
+ origin: "http://localhost:4200",
+ optionsSuccessStatus: 204 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+}
 
-/*
-app.get("/",(req,res) => {
-    res.json({message : "Test"});
+// ----------------------------------------------------
+
+const port = 3000;
+app.listen(port, () => { 
+ console.log(`Serveur à l'écoute sur le port ${port} !`); 
 });
-*/
+ 
+// ----------------------------------------------------
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Serveur connecté sur le port ${PORT}.`);
-    console.log("Coucou")
-});
+app.use(cors(corsOptions));
+app.use(express.json())
 
-//require('./routes')(app);
+app.get('/', function (req, res) {
+ res.send('hello world')
+})
+
+// ----------------------------------------------------
+
+require('./routes')(app);
+
+// ----------------------------------------------------
+
+// connection.end();
