@@ -35,7 +35,7 @@ body {
   height: 320px;
   margin: 0 auto;
   width: 640px;
-  background-image: url("./images/controller-2618897_1920.jpg") 
+  /*background-image: url("./images/controller-2618897_1920.jpg")*/ 
 }
 @media (max-width: 767px) {
   .container {
@@ -63,7 +63,7 @@ body {
   font-size: 50px;
   font-weight: 900;
   margin: 50px 40px 40px;
-  color: rgba(32, 31, 31, 0.733);
+  color: rgba(5, 5, 61, 0.911);
   
 }
 .eula {
@@ -136,3 +136,16 @@ input::-moz-focus-inner {
 #submit:active {
   color: #d0d0d2;
 }
+
+img{
+  width: 120px;
+}
+
+.log{
+  text-align: center;
+}
+
+.image{
+  margin-top: 10px;
+}
+

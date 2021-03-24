@@ -13,8 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { FestivalsComponent } from './festivals/festivals.component';
+
 import { AboutComponent } from './about/about.component';
+import { FestivalComponent } from './festival/festival.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { AboutComponent } from './about/about.component';
     RootNavComponent,
     LoginComponent,
     HomeComponent,
-    FestivalsComponent,
     AboutComponent,
+    FestivalComponent,
     
   ],
   imports: [

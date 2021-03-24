@@ -1,0 +1,62 @@
+img{
+    width: 200px;
+}
+
+.image{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.menu_i{
+    margin-top: 60px;
+    text-align: center; 
+    
+}
+
+.title{
+    font-size: 35px;
+    /*font-weight: 800;*/
+}
+.boutons{
+    text-align: center;
+}
+
+.bun{
+margin-top: 60px;
+}
+
+.bdeux{
+    margin-top: 45px; 
+}
+
+.btrois{
+    margin-top: 45px; 
+}
+
+.btn {
+    text-decoration: none;
+    padding: 11px;
+    font-family: arial;
+    font-size: 1.3em;
+    color: #FFFFFF;
+    background-color: #0070c0;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border: 1px solid #FFFFFF;
+    box-shadow: 3px 3px 13px #ffffff;
+    -webkit-box-shadow: 3px 3px 13px #ffffff;
+    -moz-box-shadow: 3px 3px 13px #ffffff;
+    }
+    
+    
+    .btn:hover {
+    padding: 11px;
+    color: #0070c0;
+    background-color: #ffffff;
+    border: 1px solid #002060;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+    }
