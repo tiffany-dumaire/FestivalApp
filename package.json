@@ -4,5 +4,8 @@
     "concurrently": "^6.0.0",
     "nodemon": "^2.0.7",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "sequelize": "^6.6.2"
   }
 }
