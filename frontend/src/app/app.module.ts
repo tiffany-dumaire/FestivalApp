@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FestivalComponent } from './festival/festival.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { FestivalComponent } from './festival/festival.component';
     HomeComponent,
     AboutComponent,
     FestivalComponent,
+   
     
   ],
   imports: [
