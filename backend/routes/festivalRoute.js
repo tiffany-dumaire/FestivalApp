@@ -1,8 +1,4 @@
-// --------------------------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------------------------
 // ---------- Festival
-// --------------------------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------------------------
 
 const router = require('express').Router();
 const db = require('../database/dbConfig');
@@ -16,6 +12,22 @@ const db = require('../database/dbConfig');
 // ----------------------------------------------------
 // ---------- get all or some values
 
+// récupération de tous les festivals
+// festival/all
+router.get('/all', (req,res,next)=> {
+    db.queryAll('Festival',(result) => {
+        res.send(result);
+    });
+});
+
+//récupération de tous les festivals triés par année
+// /festival/allbyyear
+router.get('/allbyyear',(req,res,next) => {
+    db.queryAllOrderedDesc('Festival','annee',function(result){
+        res.send(result);
+    });
+});
+
 /* router.get('/festival', function(req,res,next){
    if (!req.query['nomFestival']) next('route');
    else next();
@@ -27,26 +39,14 @@ const db = require('../database/dbConfig');
    });
 }); */
 
-router.get('/festival', function(req,res,next){ // get all festival
-   // console.log("get all festival");
-   db.queryAllOrderedDesc('Festivals','nomFestival',function(result){
-       // console.log(result);
-       res.send(result);
-   });
-}); 
-
-
-// ----------------------------------------------------
-// ---------- get one particular value
-
-/* router.get('/festival/:id',function(req,res,next){
+//festival par id : /festival/{id}
+router.get('/:id',function(req,res,next){
    const id = req.params['id'];  
-   // console.log(`get festival for id=${id}`);
-   db.queryValue('Festivals','idFestival',id,function(result){
+   db.queryValue('Festival','idFestival',id,function(result){
        res.send(result);
    });
 });
- */
+
 
 // --------------------------------------------------------------------------------------------------------
 // ----------- post request
@@ -57,11 +57,9 @@ router.get('/festival', function(req,res,next){ // get all festival
 // ----------------------------------------------------
 // ---------- create / add a new festival
 
-/* router.post('/festival', function(req,res,next) {
+/* router.post('/create', function(req,res,next) {
    db.insertValue('Festival', req.body,function(result){
-       // console.log(`add editeur ${JSON.stringify(result)}`);
        db.queryAll('Societe',function(resedit){
-           // console.log(`all editeurs : ${JSON.stringify(resedit)}`);
            for (editeurDTO of resedit) {
                db.insertallValue('suivi',{idEditeur:editeurDTO.idEditeur,idFestival:result['insertId']},function(resfinal){
                });                        
@@ -70,7 +68,7 @@ router.get('/festival', function(req,res,next){ // get all festival
        });
        res.status(200).send(result);
    });
-}) */
+}); */
 
 // ----------------------------------------------------
 // ---------- modify / update an existing festival
