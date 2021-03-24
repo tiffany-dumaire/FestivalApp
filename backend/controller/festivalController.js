@@ -38,7 +38,7 @@ exports.getFestivals = (req,res) => {
     const nomFestival = req.query.nomFestival;
     var condition = nomFestival ? {nomFestival : {[Op.like]: `%${nomFestival}%`}} : null;
 
-    Festival.findAll({where : condition})
+    Festival.findAll()
     .then(data => {
         res.send(data);
     })
