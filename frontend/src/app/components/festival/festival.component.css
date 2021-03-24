@@ -55,4 +55,9 @@
       margin-top: 35px;
   }
 
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
+  }
+
 
