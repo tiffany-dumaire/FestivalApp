@@ -1,21 +1,53 @@
-const database = require('../database/dbConfig')
-
-async function createFestival(nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2E1,m2E2,m2E3,prixE1,prixE2,prixE3){
-    try {
-        const res = await database.query('INSERT INTO Festival (nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2E1,m2E2,m2E3,prixE1,prixE2,prixE3) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)',[nomFestival,annee,nbTableE1,nbTableE2,nbTableE3,m2E1,m2E2,m2E3,prixE1,prixE2,prixE3])
-    }catch(error){
-        throw error
-    }
-}
-
-async function getFestivals() {
-    try {
-        const {festivals} = await database.query('SELECT * FROM Festival;')
-        return festivals
-    }
-    catch (error) {
-        throw error
-    }
-}
-
-module.exports = {createFestival,getFestivals}
+module.exports = (sequelize,Sequelize) => {
+    const Festival = sequelize.define('Festival',{
+        idFestival : {
+            type: Sequelize.INTEGER,
+            required : true
+        },
+        nomFestival: {
+            type: Sequelize.STRING(50),
+            required: true
+        },
+        annee: {
+            type: Sequelize.INTEGER,
+            required: true
+        },
+        nbTableE1: {
+            type: Sequelize.FLOAT,
+            required: true
+        },
+        nbTableE2: {
+            type: Sequelize.FLOAT,
+            required: true
+        },
+        nbTableE3: {
+            type: Sequelize.FLOAT,
+            required: true
+        },
+        m2E1: {
+            type: Sequelize.FLOAT,
+            required: false
+        },
+        m2E3: {
+            type: Sequelize.FLOAT,
+            required: false
+        },
+        m2E3: {
+            type: Sequelize.FLOAT,
+            required: false
+        },
+        prixE1: {
+            type: Sequelize.FLOAT,
+            required: true
+        },
+        prixE2: {
+            type: Sequelize.FLOAT,
+            required: true
+        },
+        prixE3: {
+            type: Sequelize.FLOAT,
+            required: true
+        }
+    });
+    return Festival;
+};

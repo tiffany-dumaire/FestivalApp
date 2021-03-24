@@ -1,20 +1,10 @@
 const festival = require("../model/festivalModel")
 
-async function createFestival(){
-    try{
-        await festival.createFestival()
-    }catch(error){
-        throw error
+exports.create = (req,res) => {
+    if(!req.body.nomFestival){
+        res.status(400).send({
+            message: "Ne peut être vide"
+        });
+        return;
     }
-}
-
-async function getFestivals(){
-    try{
-        return await festival.getFestivals()
-    }
-    catch (error) {
-        throw error
-    }
-}
-
-module.exports = {createFestival,getFestivals}
+};

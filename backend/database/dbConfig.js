@@ -1,4 +1,4 @@
-const mysql= require('mysql');
+/* const mysql= require('mysql');
 
 // Get the Host from Environment or use default
 const host = 'mysql-projetsep.alwaysdata.net';
@@ -15,18 +15,18 @@ const database = 'projetsep_festival_des_jeux';
 // Create the connection with required details
 const connexion = new mysql.createConnection({
   host, user, password, database
-});
-
-module.exports = connexion
-/* connexion.connect((query,err) => {
-  if (err) throw err;
-
-  // if connection is successful
-  connexion.query(query, (err, result, fields) => {
-    // if any error while executing above query, throw error
-    if (err) throw err;
-
-    // if there is no error, you have the result
-    console.log(result);
- });
 }); */
+
+module.exports = {
+  HOST : "mysql-projetsep.alwaysdata.net",
+  USER : "projetsep",
+  PASSWORD : "ProjetSEP-2020",
+  DB : "projetsep_festival_des_jeux",
+  dialect : "mysql",
+  pool : {
+    max : 5,
+    min : 0,
+    acquire : 30000,
+    idle : 10000
+  }
+};
