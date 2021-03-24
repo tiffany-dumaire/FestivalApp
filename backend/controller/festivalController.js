@@ -1,6 +1,5 @@
 const festivalModel = require("../model/festivalModel");
-const Festival = festivalModel.Festival;
-const Op = festivalModel.Sequelize.Op;
+const Festival = festivalModel.festival;
 
 exports.createFestival = (req,res) => {
     if(!req.body.nomFestival){
@@ -37,7 +36,7 @@ exports.createFestival = (req,res) => {
 
 exports.getFestivals = (req,res) => {
     const nomFestival = req.query.nomFestival;
-    var condition = nomFestival ? {nomFestival : {[Op.like]: '%${nomFestival}%'}} : null;
+    var condition = nomFestival ? {nomFestival : {[Op.like]: `%${nomFestival}%`}} : null;
 
     Festival.findAll({where : condition})
     .then(data => {

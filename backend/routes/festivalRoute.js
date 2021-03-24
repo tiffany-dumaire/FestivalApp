@@ -1,12 +1,9 @@
-module.exports = app => {
-    const festivalController = require("../controller/festivalController.js")
+const festivalController = require("../controller/festivalController.js")
 
-    var router = require("express").Router();
+const router = require("express").Router();
 
-    router.POST('/', festivalController.createFestival());
+router.post('/festivals', festivalController.createFestival());
 
-    router.GET('/', festivalController.getFestivals());
+router.get('/festivals',festivalController.getFestivals());
 
-    app.use('festivals',router);
-
-};
+module.exports = router;

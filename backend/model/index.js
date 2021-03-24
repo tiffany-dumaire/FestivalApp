@@ -4,7 +4,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host : dbConfig.HOST,
     dialect : dbConfig.dialect,
-    operatorsAliases : false,
+    operatorsAliases : true,
 
     pool : {
         max : dbConfig.pool.max,
@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./festivalModel.js")(sequelize, Sequelize);
+db.festival = require("./festivalModel.js")(sequelize, Sequelize);
 
 module.exports = db

@@ -1,8 +1,8 @@
 module.exports = (sequelize,Sequelize) => {
-    const Festival = sequelize.define('Festival',{
+    const festival = sequelize.define('Festival',{
         nomFestival: {
             type: Sequelize.STRING(50),
-            required: true
+            required: true,
         },
         annee: {
             type: Sequelize.INTEGER,
@@ -24,7 +24,7 @@ module.exports = (sequelize,Sequelize) => {
             type: Sequelize.FLOAT,
             required: false
         },
-        m2E3: {
+        m2E2: {
             type: Sequelize.FLOAT,
             required: false
         },
@@ -45,5 +45,5 @@ module.exports = (sequelize,Sequelize) => {
             required: true
         }
     });
-    return Festival;
+    return festival;
 };

@@ -21,5 +21,8 @@ app.get("/",(req,res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log("Serveur connecté sur le port ${PORT}.");
+    console.log(`Serveur connecté sur le port ${PORT}.`);
+    console.log("Coucou")
 });
+
+require('./routes')(app);
