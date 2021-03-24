@@ -1,6 +1,6 @@
 const express = require('express')
-const bodyParser = require('body-parser');
-const cors = require('cors');
+//const bodyParser = require('body-parser');
+//const cors = require('cors');
 const app = express();
 
 var corsOptions = {
@@ -8,16 +8,18 @@ var corsOptions = {
     optionsSuccessStatus: 204
 };
 
-app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true}));
+//app.use(cors(corsOptions));
+//app.use(bodyParser.json())npm;
+//app.use(bodyParser.urlencoded({extended : true}));
 
-const database = require('./model');
-database.sequelize.sync();
+//const database = require('./model');
+//database.sequelize.sync();
 
+/*
 app.get("/",(req,res) => {
     res.json({message : "Test"});
 });
+*/
 
 const PORT = 3000;
 app.listen(PORT, () => {
@@ -25,4 +27,4 @@ app.listen(PORT, () => {
     console.log("Coucou")
 });
 
-require('./routes')(app);
+//require('./routes')(app);
