@@ -1,24 +1,12 @@
-var express = require('express');
-var router = express.Router();
+module.exports = app => {
+    const festivalController = require("../controller/festivalController.js")
 
-const festivalController = require("../controller/festivalController")
+    var router = require("express").Router();
 
-router.post('/create', async (req,res,next) => {
-    try{
-        await festivalController.createFestival(req.body)
-        res.status(200).json({message:"Success"})
-    }catch(error){
-        res.status(500).json({message: "retry"});
-    }
-});
+    router.POST('/', festivalController.createFestival());
 
-router.get('/', async (req,res,next) => {
-    try {
-        const festivals = await festivalController.getFestivals();
-        res.status(200).json({message: festivals})
-    }catch(error){
-        res.status(500).json({message: "data?"})
-    }
-});
+    router.GET('/', festivalController.getFestivals());
 
-module.exports = router;
+    app.use('festivals',router);
+
+};

@@ -1,9 +1,5 @@
 module.exports = (sequelize,Sequelize) => {
     const Festival = sequelize.define('Festival',{
-        idFestival : {
-            type: Sequelize.INTEGER,
-            required : true
-        },
         nomFestival: {
             type: Sequelize.STRING(50),
             required: true
