@@ -31,7 +31,7 @@ router.get('/editeur/all/:id',function(req,res,next){
 
 // récupération de tous les exposants
 // societe/exposant/all
-router.get('/exposant/all', (req,res,next)=> {
+router.get('/exposant/all', (req,res,next) => {
     db.queryValuesOrdered('Societe','exposant',true,'nomSociete',function(result){
         res.send(result);
     });
@@ -39,7 +39,7 @@ router.get('/exposant/all', (req,res,next)=> {
 
 // récupération d'un exposant particulier
 // societe/exposant/all/:id
-router.get('/exposant/all/:id',function(req,res,next){
+router.get('/exposant/all/:id',(req,res,next) => {
     const id = req.params['id'];  
     db.queryValue('Societe','idSociete',id,function(result){
         res.send(result);

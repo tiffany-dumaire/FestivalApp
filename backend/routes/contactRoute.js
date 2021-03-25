@@ -21,7 +21,7 @@ router.get('/all',(req,res,next) => {
 });
 
 //contact par id : /contact/all/{id}
-router.get('/all/:idContact',function(req,res,next){
+router.get('/all/:idContact',(req,res,next) => {
     const id = req.params['idContact'];  
     db.queryValue('Contact','idContact',id,function(result){
         res.send(result);
@@ -35,5 +35,7 @@ router.get('/all/:idContact',function(req,res,next){
         res.send(result);
     });
  });
+
+
 
 module.exports = router

@@ -35,7 +35,7 @@ router.get('/allbyyear',(req,res,next) => {
 }); */
 
 //festival par id : /festival/all/{id}
-router.get('/all/:id',function(req,res,next){
+router.get('/all/:id',(req,res,next) => {
    const id = req.params['id'];  
    db.queryValue('Festival','idFestival',id,function(result){
        res.send(result);
