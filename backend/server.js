@@ -13,7 +13,7 @@ var corsOptions = { // entries can come only from....
 
 // ----------------------------------------------------
 
-const port = 3000;
+const port = 8000;
 app.listen(port, () => { 
  console.log(`Serveur à l'écoute sur le port ${port} !`); 
 });
