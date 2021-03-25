@@ -12,7 +12,7 @@ export class GameListFService {
 
 constructor( private http: HttpClient ) { }
 getGames(): Observable<Game[]> {
-  return this.http.get<Game[]>('http://localhost:3100/jeu/all')
+  return this.http.get<Game[]>('http://localhost:3100/jeu/allbyfestival')
 
   }
 
