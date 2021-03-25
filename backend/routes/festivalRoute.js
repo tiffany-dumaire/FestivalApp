@@ -53,6 +53,7 @@ router.get('/all/:id',function(req,res,next){
 // ---------- create / add a new festival
 
 //creation d'un festival
+// festival/create
 router.post('/create',(req,res,next) => {
     db.insertValue('Festival',req.body,function(result){
         res.send(result);
