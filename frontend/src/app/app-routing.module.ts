@@ -18,6 +18,7 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { FestivalListComponent } from './components/festival-list/festival-list.component';
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
+import { OrgHomeComponent } from './components/org-home/org-home.component';
 
 
 const routes: Routes = [
@@ -74,7 +75,10 @@ const routes: Routes = [
     path: "explist", component: ExposantListComponent
   },
   {
-    path: "gamelistexp", component: ExposantListComponent
+    path: "gamelistexp", component: GameListExpComponent
+  },
+  {
+    path: "orghome", component: OrgHomeComponent
   }
 
 ];
