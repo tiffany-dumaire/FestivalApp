@@ -1,22 +1,27 @@
 <div class="menu_i">
-    <h1 class="title">Liste des jeux du festival</h1>
+    <h1 class="title">Festival antérieurs</h1>
 </div>
 
-<table *ngIf="festivalsy" id="gamess">
+<table *ngIf="festivalsy" id="fests">
   <tr>
-     <th>Nom Jeu</th><th>Nombre Joueurs Minimum</th>
-     <th>Nombre Joueurs Maximum</th><th>Age Minimum</th><th>Durée</th>
-     <th>Lien notice</th> <th>Type de jeu</th><th>éditeur</th>
+     <th>Nom Festival</th><th>Année</th>
+     <th>Nombre de tables espace 1</th><th>Nombre de tables espace 2</th><th>Nombre de tables espace 3</th>
+     <th>Surface m<sup>2</sup> espace 1</th> <th>Surface m<sup>2</sup> espace 2</th><th>Surface m<sup>2</sup> espace 3</th>
+     <th>Prix au m<sup>2</sup> espace 1</th><th>Prix au m<sup>2</sup> espace 2</th><th>Prix au m<sup>2</sup> espace 3</th>
   </tr>
   <tr *ngFor="let festival of festivalsy | async ">
     
     <td>{{festival.nomFestival}}</td>
-    <td>{{game.nbJoueurMin}}</td>
-    <td>{{game.nbJoueurMax}}</td>
-    <td>{{game.ageMin}}</td>
-    <td>{{game.duree}}</td>
-    <td>{{game.lienNotice}}</td>
-    <td>{{game.idTypeJeu}}</td>
-    <td>{{game.idEditeur}}</td>
+    <td>{{festival.annee}}</td>
+    <td>{{festival.nbtbE1}}</td>
+    <td>{{festival.nbtbE2}}</td>
+    <td>{{festival.nbtbE3}}</td>
+    <td>{{festival.m21}}</td>
+    <td>{{festival.m22}}</td>
+    <td>{{festival.m23}}</td>
+    <td>{{festival.prix1}}</td>
+    <td>{{festival.prix2}}</td>
+    <td>{{festival.prix3}}</td>
+
   </tr>
 </table>

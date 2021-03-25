@@ -10,7 +10,7 @@ import { CreateFestComponent } from './components/create-fest/create-fest.compon
 import { CreateAccountHComponent } from './components/create-account-h/create-account-h.component';
 import { CreateAccountAdComponent } from './components/create-account-ad/create-account-ad.component';
 import { CreateAccountOrgComponent } from './components/create-account-org/create-account-org.component';
-import { CreateEditorComponent } from './components/create-editor/create-editor.component';
+
 import { CreateExpComponent } from './components/create-exp/create-exp.component';
 import { AddGameComponent } from './components/add-game/add-game.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
@@ -56,9 +56,7 @@ const routes: Routes = [
   {
     path: "createaccorg", component: CreateAccountOrgComponent
   },
-  {
-    path: "createed", component: CreateEditorComponent
-  },
+
   {
     path: "createexp", component: CreateExpComponent
   },
