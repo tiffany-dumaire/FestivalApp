@@ -28,13 +28,23 @@ router.get('/all/:idJeu',(req,res,next) => {
     });
  });
 
+ //jeux par festival
+ // jeu/allbyfestival
+ router.get('/allbyfestival',(req,res,next) => {
+    db.queryAllWhere2Ordered('Jeu','JeuReserve','Reservation','idJeu','idJeu','idReservation','idReservation',req.body,'nomJeu',function(result){
+        res.send(result);
+    });
+ });
+
  //jeux par editeur
  // jeu/allbyeditor
  router.get('/allbyeditor',(req,res,next) => {
     db.queryAllWhere3Ordered('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',req.body,'nomSociete',function(result){
         res.send(result);
     });
- });////////PAR FESTIVAL A REVOIR
+ });
+
+
  
 //jeux par zone
  // jeu/allbyzone
