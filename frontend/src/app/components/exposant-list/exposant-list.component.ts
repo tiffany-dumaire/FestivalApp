@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import { ExposantListService } from '../../service/exposant-list.service';
 
 @Component({
   selector: 'app-exposant-list',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exposant-list.component.css']
 })
 export class ExposantListComponent implements OnInit {
+public exposantlist;
 
-  constructor() { }
+  constructor(private explist: ExposantListService) { }
 
   ngOnInit(): void {
+  this.getExposants();
   }
 
+  getExposants(): void {
+    this.exposantlist =  this.explist.getExposants().pipe(
+      tap( (exposantlist) => {console.log(JSON.stringify(exposantlist));})
+    )
+    
+  }
 }

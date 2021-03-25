@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateExpComponent } from './create-exp.component';
+import { SuiviExposantComponent } from './suivi-exposant.component';
 
-describe('CreateExpComponent', () => {
-  let component: CreateExpComponent;
-  let fixture: ComponentFixture<CreateExpComponent>;
+describe('SuiviExposantComponent', () => {
+  let component: SuiviExposantComponent;
+  let fixture: ComponentFixture<SuiviExposantComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateExpComponent ]
+      declarations: [ SuiviExposantComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateExpComponent);
+    fixture = TestBed.createComponent(SuiviExposantComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

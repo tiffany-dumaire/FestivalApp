@@ -1,1 +1,21 @@
-<p>exposant-list works!</p>
+<div class="menu_i">
+    <h1 class="title">Liste des exposants</h1>
+</div>
+
+<table *ngIf="exposantlist" id="exp">
+  <tr>
+     <th>Nom Festival</th><th>Année</th>
+     <th>Nombre de tables espace 1</th><th>Nombre de tables espace 2</th>
+     <th>Suivi Exposant</th>
+  </tr>
+  <tr *ngFor="let exposant of exposantlist | async ">
+    
+    <td>{{exposant.nomSociete}}</td>
+    <td>{{exposant.adresse}}</td>
+    <td>{{exposant.pays}}</td>
+    <td>{{exposant.editeur}}</td>
+    <td><button type="button" class="btn btn-default active">Suivi</button></td>
+    
+  </tr>
+</table>
+
