@@ -13,7 +13,7 @@ const db = require('../database/dbConfig');
 // ---------- get all or some values
 
 // récupération de tous les jeux
-// jeux/all
+// jeu/all
 router.get('/all',(req,res,next) => {
     db.queryAllOrdered('Jeu','nomJeu',function(result){
         res.send(result);

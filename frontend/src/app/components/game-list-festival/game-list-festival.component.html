@@ -3,21 +3,32 @@
     <h1 class="title">Liste des jeux du festival</h1>
 </div>
 
-<!--div ng-app="myApp" ng-controller="customersCtrl"-->
-
-    <!--table>
-      <tr ng-repeat="x in names">
-        <td>{{ x.Name }}</td>
-        <td>{{ x.Country }}</td>
-      </tr>
-    </table>
-    
-    </div>
-    
-    <script>
-    var app = angular.module('myApp', []);
-    /*app.controller('customersCtrl', function($scope, $http) {
-      $http.get("customers.php")
-      .then(function (response) {$scope.names = response.data.records;});
-    });*/
-    </script-->
+<table *ngIf="games">
+  <tr>
+     <th>Id</th><th>Nom Jeu</th><th>Nombre Joueurs Minimum</th>
+     <th>Nombre Joueurs Maximum</th><th>Age Minimum</th><th>Durée</th>
+     <th>Lien notice</th> <th>Type de jeu</th><th>éditeur</th>
+  </tr>
+  <tr *ngFor="game in self.games | async ">
+    <td>{{games.idJeu}}</td>
+    <td>{{games.nomJeu}}</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   
+     <!-- <td>{{festival.id}}</td><td>{{festival.name}}</td><td>{{festival.tableTotal}}</td>
+     <td>{{festival.tableprice_1 | currency}}</td>
+     <td>{{festival.tableprice_2 | currency}}</td>
+     <td>{{festival.tableprice_3 | currency}}</td>
+     <td>{{festival.sqmprice_1 | currency}}</td>
+     <td>{{festival.sqmprice_2 | currency}}</td>
+     <td>{{festival.sqmprice_3 | currency}}</td>
+     <td>{{festival.tablemax_1 | number:'3.0' }}</td>
+     <td>{{festival.tablemax_2 | number:'3.0'}}</td>
+     <td>{{festival.tablemax_3 | number:'3.0'}}</td> -->
+  </tr>
+</table>

@@ -32,7 +32,9 @@ import { FestivalListComponent } from './components/festival-list/festival-list.
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
-
+import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { OrgHomeComponent } from './components/org-home/org-home.component';
     ExposantListComponent,
     GameListExpComponent,
     OrgHomeComponent,
+    AdminHomeFestComponent,
    
     
   ],
@@ -70,7 +73,9 @@ import { OrgHomeComponent } from './components/org-home/org-home.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent,

@@ -19,6 +19,9 @@ import { FestivalListComponent } from './components/festival-list/festival-list.
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
+import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
+
+
 
 
 const routes: Routes = [
@@ -79,6 +82,9 @@ const routes: Routes = [
   },
   {
     path: "orghome", component: OrgHomeComponent
+  },
+  {
+    path: "adminhomefest", component: AdminHomeFestComponent
   }
 
 ];
