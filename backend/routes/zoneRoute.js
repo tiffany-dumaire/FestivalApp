@@ -15,6 +15,8 @@ router.get('/all', (req,res,next)=> {
     });
 });
 
+// création d'une zone
+// zone/create
 router.post('/create',(req,res,next) => {
     db.insertValue('Zone',req.body,function(result){
         res.send(result);

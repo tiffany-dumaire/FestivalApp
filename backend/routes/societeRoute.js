@@ -54,4 +54,15 @@ router.post('/create',(req,res,next) => {
     });
 });
 
+
+//----------------------------------------------
+//----------Societé dans un festival------------
+//----------------------------------------------
+
+router.get('/festival/Exposant',(req,res,next) => {
+    db.queryAllWhereOrdered('Societe','Reservation','idSociete','idSociete',req.body,'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
 module.exports = router

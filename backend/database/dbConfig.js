@@ -46,18 +46,18 @@ exports.queryData = function(request,callback){
     });
 }
 
-exports.queryAll = function(table,callback){
-    this.queryData(`SELECT * FROM ${table}`, callback);
-}
-
-exports.queryAllWhereOrdered = function(table,table2,key,key2,order,callback){
-    this.queryData(`SELECT * FROM ${table},${table2} WHERE ${table}.${key} = ${table2}.${key2} ORDER BY ${order}`,callback);
-}
-
 var firstvaluekey = function(values){
     var keys = Object.keys(values);
     var firstValue = ` ${keys[0]}=${val2val(values[keys[0]])}`;
     return firstValue;
+}
+
+exports.queryAll = function(table,callback){
+    this.queryData(`SELECT * FROM ${table}`, callback);
+}
+
+exports.queryAllWhereOrdered = function(table,table2,key,key2,parameter,order,callback){
+    this.queryData(`SELECT * FROM ${table},${table2} WHERE ${table}.${key} = ${table2}.${key2} AND ${firstvaluekey(parameter)} ORDER BY ${order}`,callback);
 }
 
 exports.queryAllWhere2Ordered = function(table,table2,table3,key,key2,key3,key4,parameter,order,callback){
