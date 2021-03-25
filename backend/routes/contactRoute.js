@@ -12,26 +12,26 @@ const db = require('../database/dbConfig');
 // ----------------------------------------------------
 // ---------- get all or some values
 
-// récupération de tous les jeux
-// jeu/all
+// récupération de tous les contacts
+// contact/all
 router.get('/all',(req,res,next) => {
-    db.queryAllOrdered('Jeu','nomJeu',function(result){
+    db.queryAllOrdered('Contact','nom',function(result){
         res.send(result);
     });
 });
 
-//jeu par id : /jeu/all/{id}
-router.get('/all/:idJeu',function(req,res,next){
-    const id = req.params['idJeu'];  
-    db.queryValue('Jeu','idJeu',id,function(result){
+//contact par id : /contact/all/{id}
+router.get('/all/:idContact',function(req,res,next){
+    const id = req.params['idContact'];  
+    db.queryValue('Contact','idContact',id,function(result){
         res.send(result);
     });
  });
  
  //creation d'un jeu
- // jeu/create
+ // contact/create
  router.post('/create',(req,res,next) => {
-    db.insertValue('Jeu',req.body,function(result){
+    db.insertValue('Contact',req.body,function(result){
         res.send(result);
     });
  });
