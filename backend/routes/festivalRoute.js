@@ -3,13 +3,8 @@
 const router = require('express').Router();
 const db = require('../database/dbConfig');
 
-// --------------------------------------------------------------------------------------------------------
 // ----------- get request
-// --------------------------------------------------------------------------------------------------------
 
-
-
-// ----------------------------------------------------
 // ---------- get all or some values
 
 // récupération de tous les festivals
@@ -39,8 +34,8 @@ router.get('/allbyyear',(req,res,next) => {
    });
 }); */
 
-//festival par id : /festival/{id}
-router.get('/:id',function(req,res,next){
+//festival par id : /festival/all/{id}
+router.get('/all/:id',function(req,res,next){
    const id = req.params['id'];  
    db.queryValue('Festival','idFestival',id,function(result){
        res.send(result);
@@ -57,18 +52,12 @@ router.get('/:id',function(req,res,next){
 // ----------------------------------------------------
 // ---------- create / add a new festival
 
-/* router.post('/create', function(req,res,next) {
-   db.insertValue('Festival', req.body,function(result){
-       db.queryAll('Societe',function(resedit){
-           for (editeurDTO of resedit) {
-               db.insertallValue('suivi',{idEditeur:editeurDTO.idEditeur,idFestival:result['insertId']},function(resfinal){
-               });                        
-           }
-           db.insertValue('Zone',{idZone:-1,nomZone:"- zone indéfinie",idFestival:result['insertId']},function(newzone){});
-       });
-       res.status(200).send(result);
-   });
-}); */
+//creation d'un festival
+router.post('/create',(req,res,next) => {
+    db.insertValue('Festival',req.body,function(result){
+        res.send(result);
+    });
+});
 
 // ----------------------------------------------------
 // ---------- modify / update an existing festival

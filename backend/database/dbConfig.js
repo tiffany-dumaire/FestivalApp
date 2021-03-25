@@ -157,18 +157,18 @@ exports.updateValueTwoKeys = function(table,values,first,second,callback){
 // ignore first value considered as primary index
 var mapinsertvalues = function(values){
     var keys = Object.keys(values);
-    // console.log(keys);
+    console.log(keys);
     var setvalue = "(";
-    for(i=1;i<keys.length;i++){
+    for(i=0;i<keys.length;i++){
         if (keys[i].slice(0,1) != "_"){ // convention for private property not save on BD
-            if(i>1) { setvalue += ", "; } 
+            if(i>0) { setvalue += ", "; } 
             setvalue += keys[i];
         }
     }
     setvalue += ") VALUES (";
-    for(i=1;i<keys.length;i++){
+    for(i=0;i<keys.length;i++){
         if (keys[i].slice(0,1) != "_"){ // convention for private property not save on BD
-            if(i>1) { setvalue += ", "; } 
+            if(i>0) { setvalue += ", "; } 
             setvalue += `${val2val(values[keys[i]])}`;
         }
     }
@@ -179,7 +179,7 @@ var mapinsertvalues = function(values){
 // same as previous but no primary key, all values are inserted
 var mapinsertallvalues = function(values){
     var keys = Object.keys(values);
-    // console.log(keys);
+    //console.log(keys);
     var setvalue = "(";
     for(i=0;i<keys.length;i++){
         if (keys[i].slice(0,1) != "_"){ // convention for private property not save on BD
@@ -201,8 +201,10 @@ var mapinsertallvalues = function(values){
 // table is the table where insert new value
 // values is an object describing values to insert
 exports.insertValue= function(table,values,callback){
+    console.log(values);
     var req = `INSERT INTO ${table} ${mapinsertvalues(values)}`;
-   //  console.log(req);
+    console.log(req);
+    //req = `INSERT INTO Zone (nomZone) VALUES ('Test');`
     this.queryData(req,callback);
 }
 // table is the table where insert new value
