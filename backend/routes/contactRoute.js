@@ -3,39 +3,42 @@
 const router = require('express').Router();
 const db = require('../database/dbConfig');
 
-// --------------------------------------------------------------------------------------------------------
-// ----------- get request
-// --------------------------------------------------------------------------------------------------------
+//---------------- Liste des contacts pour le suivi des exposants ----------------------------------
+//----------------(liste déroulante pour ajouter à l'exposant ou à l'éditeur) ----------------------
 
+//----------get------------
 
-
-// ----------------------------------------------------
-// ---------- get all or some values
-
-// récupération de tous les contacts
-// contact/all
+/**
+ * Récupération de tous les contacts (inutile en vrai)
+ * contact/all
+ */
 router.get('/all',(req,res,next) => {
     db.queryAllOrdered('Contact','nom',function(result){
         res.send(result);
     });
 });
 
-//contact par id : /contact/all/{id}
-router.get('/all/:idContact',(req,res,next) => {
-    const id = req.params['idContact'];  
-    db.queryValue('Contact','idContact',id,function(result){
+/**
+ * récupération d'un contact par id de société pour récupérer que ceux de la société (affichage de l'exposant/éditeur/suivi exposant)
+ * /contact/all/{id}
+*/
+router.get('/all/:idSociete',(req,res,next) => {
+    const id = req.params['idSociete'];  
+    db.queryValue('Contact','idSociete',id,function(result){
         res.send(result);
     });
- });
+});
  
- //creation d'un jeu
- // contact/create
- router.post('/create',(req,res,next) => {
+//----------post-----------
+
+/**
+ * création d'un nouveau contact (modification éditeur/exposant avec formulaire d'ajout des contacts)
+ * /contact/create
+ */
+router.post('/create',(req,res,next) => {
     db.insertValue('Contact',req.body,function(result){
         res.send(result);
     });
- });
-
-
+});
 
 module.exports = router
