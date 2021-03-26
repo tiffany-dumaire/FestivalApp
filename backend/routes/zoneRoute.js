@@ -3,18 +3,28 @@
 const router = require('express').Router();
 const db = require('../database/dbConfig');
 
-// ----------- get request
+//---------------- Liste des zone du festival ---------------------------------------------------------- 
+//----------------(à utiliser durant la création de jeu dans une réservation) --------------------------
 
-// ---------- get all or some values
-
-// récupération de tous les zones
-// zone/all
+/** 
+ * récupération de la liste des zones (pour ajout au festival sinon création en post)
+ * /zone/all
+ */
 router.get('/all', (req,res,next)=> {
     db.queryAllOrdered('Zone','nomZone',function(result){
         res.send(result);
     });
 });
 
+/**
+ * Ajout d'une zone à un festival
+ */
+/// post
+
+/**
+ * création d'une zone
+ * /zone/create
+ */
 router.post('/create',(req,res,next) => {
     db.insertValue('Zone',req.body,function(result){
         res.send(result);
