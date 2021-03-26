@@ -33,11 +33,13 @@ router.get('/all/:idJeu',(req,res,next) => {
 
 //----------get------------
 
-// il faut donner l'id du festival dans le body !!!
-//jeux par festival
-// jeu/allbyfestival
-router.get('/allbyfestival',(req,res,next) => {
-    db.queryAllWhere2Ordered('Jeu','JeuReserve','Reservation','idJeu','idJeu','idReservation','idReservation',req.body,'nomJeu',function(result){
+/**
+ * liste des jeux par festival
+ *  /jeu/allbyfestival/{idFestival}
+ */ 
+router.get('/allbyfestival/:idFestival',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere2Ordered('Jeu','JeuReserve','Reservation','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomJeu',function(result){
         res.send(result);
     });
 });
@@ -47,11 +49,13 @@ router.get('/allbyfestival',(req,res,next) => {
 
 //----------get------------
 
-// il faut donner l'id du festival dans le body !!!
-//jeux par editeur
-// jeu/allbyeditor
-router.get('/allbyeditor',(req,res,next) => {
-    db.queryAllWhere3Ordered('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',req.body,'nomSociete',function(result){
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}
+ */
+router.get('/allbyeditor/:idFestival',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere3Ordered('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomSociete',function(result){
         res.send(result);
     });
 });
@@ -61,10 +65,13 @@ router.get('/allbyeditor',(req,res,next) => {
 
 //----------get------------
 
-//jeux par zone
- // /jeu/allbyzone
-router.get('/allbyzone',(req,res,next) => {
-    db.queryAllWhere3Ordered('Jeu','JeuReserve','Zone','ZoneFestival','idJeu','idJeu','idZone','idZone','idZone','idZone',req.body,'nomZone',function(result){
+/** 
+ * jeux par zone
+ * /jeu/allbyzone/{idFestival}
+ */
+router.get('/allbyzone/:idFestival',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere3Ordered('Jeu','JeuReserve','Zone','ZoneFestival','idJeu','idJeu','idZone','idZone','idZone','idZone',{"idFestival":id},'nomZone',function(result){
         res.send(result);
     });
 });
