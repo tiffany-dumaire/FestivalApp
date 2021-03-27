@@ -2,7 +2,7 @@ export interface Festival{
     idFestival : number;
     nomFestival: string; 
     annee: number;
-    nbTableE1: string;
+    nbTableE1: number;
     nbTableE2: number; 
     nbTableE3: number;
     m2E1: number;

@@ -10,7 +10,14 @@ import {Festival} from 'src/app/model/festival';
 })
 export class FestivalService {
 
-  constructor( ) { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  constructor( private http: HttpClient ) { }
+  addFestival(festival: Festival): Observable<Festival> {
+    return this.http.post<Festival>('http://localhost:3100/festival/create', festival)
+  
+    }
   
   
   }
