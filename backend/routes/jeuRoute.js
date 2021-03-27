@@ -34,6 +34,16 @@ router.get('/all/:idJeu',(req,res,next) => {
 //----------get------------
 
 /**
+ * liste des jeux du festival le plus récent
+ * /jeu/recent/allbyfestival/
+ */
+router.get('/recent/allbyfestival',(req,res,next) => {
+    db.queryAllWhere3OrderedOne('Jeu','JeuReserve','Reservation','Festival','idJeu','idJeu','idReservation','idReservation','idFestival','idFestival','annee=(SELECT MAX(annee) FROM Festival)','nomJeu',function(result){
+        res.send(result);
+    });
+});
+
+/**
  * liste des jeux par festival
  *  /jeu/allbyfestival/{idFestival}
  */ 
