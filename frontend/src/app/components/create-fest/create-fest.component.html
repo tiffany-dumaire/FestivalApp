@@ -7,18 +7,19 @@
     <div class="legendf">
       <legend> Créer un Festival</legend>
     </div>
-    <input type="text" name="field1" placeholder="Nom du festival" #nomf>
-    <input type="email" name="field2" placeholder="Année du festival" #anneef>
-    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 1" #nb1>
-    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 2" #nb2>
-    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 3" #nb3>
-    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 1" #m1>
-    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 2" #m2>
-    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 3" #m3>
-    <input type="email" name="field2" placeholder="Prix pour l'espace 1" #p1>
-    <input type="email" name="field2" placeholder="Prix pour l'espace 2" #p2>
-    <input type="email" name="field2" placeholder="Prix pour l'espace 3" #p3>
+    <form #festivalForm="ngForm" (ngSubmit)="onSubmit(festivalForm)">
+    <input type="text" name="field1" placeholder="Nom du festival" #name="ngModel" [(ngModel)]="festival.nomFestival">
+    <input type="email" name="field2" placeholder="Année du festival" #name="ngModel" [(ngModel)]="festival.annee">
+    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 1" #name="ngModel" [(ngModel)]="festival.nbTableE1">
+    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 2" #name="ngModel" [(ngModel)]="festival.nbTableE2">
+    <input type="email" name="field2" placeholder="Nombre de tables pour l'espace 3" #name="ngModel" [(ngModel)]="festival.nbTableE3">
+    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 1" #name="ngModel" [(ngModel)]="festival.m2E1">
+    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 2"  #name="ngModel" [(ngModel)]="festival.m2E2">
+    <input type="email" name="field2" placeholder="Nombre de tables par mètre carré pour l'espace 3"  #name="ngModel" [(ngModel)]="festival.m2E3">
+    <input type="email" name="field2" placeholder="Prix pour l'espace 1"  #name="ngModel" [(ngModel)]="festival.prixE1">
+    <input type="email" name="field2" placeholder="Prix pour l'espace 2"  #name="ngModel" [(ngModel)]="festival.prixE2">
+    <input type="email" name="field2" placeholder="Prix pour l'espace 3"  #name="ngModel" [(ngModel)]="festival.prixE3">
     
-    <input type="submit" value="Créer le festival" (click)="add(nomf.value, anneef.value, nb1.value, nb2.value, nb3.value, m1.value, m2.value, m3.value, p1.value, p2.value, p3.value); " />
+    <input type="submit" value="Créer le festival" (click)="resetForm(festivalForm)" />
     </form>
-    </div>
+    

@@ -36,6 +36,7 @@ import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,9 @@ import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposa
     MatListModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

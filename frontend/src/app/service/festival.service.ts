@@ -9,6 +9,7 @@ import {Festival} from 'src/app/model/festival';
   providedIn: 'root'
 })
 export class FestivalService {
+  festival: Festival;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
