@@ -8,22 +8,24 @@ import { NgForm } from '@angular/forms';
   selector: 'app-create-fest',
   templateUrl: './create-fest.component.html',
   styleUrls: ['./create-fest.component.css'],
-  //provider: [FestivalService]
+  providers: [FestivalService]
 })
 export class CreateFestComponent implements OnInit {
 //festivals: Festival[];
-festival: Festival;
-  constructor(private festivalService: FestivalService) { }
+public festival: Festival;
+  
+constructor(private festivalService: FestivalService) {
+}
 
   ngOnInit(): void {
-
+    //this.resetForm();
   }
 
   
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
-    this.festivalService.festival = {
+    this.festival = {
     idFestival : null,
     nomFestival: "", 
     annee: null,
@@ -42,7 +44,7 @@ festival: Festival;
   onSubmit(form: NgForm) {
    
       this.festivalService.addFestival(form.value).subscribe((res) => {
-        this.resetForm(form);
+        //this.resetForm(form);
         /*M.toast({ html: 'Saved successfully', classes: 'rounded' });*/
       });
   }

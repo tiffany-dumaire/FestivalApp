@@ -12,7 +12,7 @@ export class GameListFService {
 
 constructor( private http: HttpClient ) { }
 getGames(): Observable<Game[]> {
-  var url = 'http://localhost:3100/jeu/allbyfestival/';
+  var url = 'http://localhost:3100/jeu/recent/allbyfestival/';
   return this.http.get<Game[]>(url);
   
 

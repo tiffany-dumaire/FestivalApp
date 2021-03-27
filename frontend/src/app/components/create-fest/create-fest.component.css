@@ -2,7 +2,7 @@
     font-size: 50px;
     font-weight: 900;
     margin: 50px 40px 40px;
-    color: rgba(12, 12, 14, 0.911);
+    color: rgba(13, 13, 83, 0.911);
 	text-align: center;
 }
 
@@ -106,10 +106,15 @@
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-	background: #0d6628;
+	background: #0f8131;
 }
 
 .legendf{
 	text-align: center;
 	
+}
+
+body{
+background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+background-size: cover;
 }
