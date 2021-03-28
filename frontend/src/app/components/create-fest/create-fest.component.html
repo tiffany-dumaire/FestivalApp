@@ -8,8 +8,8 @@
     <div class="legendf">
       <legend> Créer un Festival</legend>
     </div>
-    <form #festivalForm="ngForm" (ngSubmit)="onSubmit(festivalForm)">
-    <input type="text" name="nomFestival" placeholder="Nom du festival"  [(ngModel)]="festival.nomFestival">
+    <form #festivalForm="ngForm" (ngSubmit)="onSubmit(festival.nomFestival,festival.annee, festival.nbTableE1, festival.nbTableE2, festival.nbTableE3, festival.m2E1,festival.m2E2, festival.m2E3, festival.prixE1, festival.prixE2, festival.prixE3 )">
+    <input type="text" name="nomFestival" placeholder="Nom du festival"  #name="ngModel" [(ngModel)]="festival.nomFestival">
     <input type="email" name="annee" placeholder="Année du festival" #name="ngModel" [(ngModel)]="festival.annee">
     <input type="email" name="nbTableE1" placeholder="Nombre de tables pour l'espace 1" #name="ngModel" [(ngModel)]="festival.nbTableE1">
     <input type="email" name="nbTableE2" placeholder="Nombre de tables pour l'espace 2" #name="ngModel" [(ngModel)]="festival.nbTableE2">

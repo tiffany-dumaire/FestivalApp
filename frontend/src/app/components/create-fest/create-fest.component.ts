@@ -11,14 +11,14 @@ import { NgForm } from '@angular/forms';
   providers: [FestivalService]
 })
 export class CreateFestComponent implements OnInit {
-//festivals: Festival[];
+public festivals: Festival[];
 public festival: Festival;
   
 constructor(private festivalService: FestivalService) {
 }
 
   ngOnInit(): void {
-    //this.resetForm();
+    this.resetForm();
   }
 
   
@@ -41,12 +41,24 @@ constructor(private festivalService: FestivalService) {
     }
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(
+    nomFestival: string, 
+    annee: number,
+    nbTableE1: number,
+    nbTableE2: number, 
+    nbTableE3: number,
+    m2E1: number,
+    m2E2: number,
+    m2E3: number,
+    prixE1: number,
+    prixE2: number,
+    prixE3: number
+    ) {
    
-      this.festivalService.addFestival(form.value).subscribe((res) => {
-        //this.resetForm(form);
-        /*M.toast({ html: 'Saved successfully', classes: 'rounded' });*/
+      this.festivalService.addFestival({nomFestival, annee, nbTableE1, nbTableE2, nbTableE3, m2E1, m2E2, m2E3, prixE1, prixE2, prixE3} as Festival).subscribe(festival => {
+        this.festivals.push(festival);
       });
+      
   }
   
 
