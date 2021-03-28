@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
 import { FormsModule } from '@angular/forms';
+import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { FormsModule } from '@angular/forms';
     OrgHomeComponent,
     AdminHomeFestComponent,
     SuiviExposantComponent,
+    ReservedGameListComponent,
    
     
   ],

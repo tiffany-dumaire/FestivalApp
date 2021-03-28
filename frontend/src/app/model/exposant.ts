@@ -5,7 +5,7 @@ export class Exposant{
     nomSociete: string; 
     adresse: string;
     pays: string;
-    editeur: number;
+    editeur: string;
    
 
 

@@ -20,6 +20,8 @@ import { GameListExpComponent } from './components/game-list-exp/game-list-exp.c
 import { OrgHomeComponent } from './components/org-home/org-home.component';
 import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
+import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
+
 
 
 
@@ -83,6 +85,9 @@ const routes: Routes = [
   },
   {
     path: "suiviexposant", component: SuiviExposantComponent
+  },
+  {
+    path: "jeuxreserves", component: ReservedGameListComponent
   }
 
 ];

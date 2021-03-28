@@ -4,8 +4,8 @@
 
 <table *ngIf="exposantlist" id="exp">
   <tr>
-     <th>Nom Festival</th><th>Année</th>
-     <th>Nombre de tables espace 1</th><th>Nombre de tables espace 2</th>
+     <th>Nom de la société</th><th>Adresse de la société</th>
+     <th>Pays</th>
      <th>Suivi Exposant</th>
   </tr>
   <tr *ngFor="let exposant of exposantlist | async ">
@@ -13,7 +13,7 @@
     <td>{{exposant.nomSociete}}</td>
     <td>{{exposant.adresse}}</td>
     <td>{{exposant.pays}}</td>
-    <td>{{exposant.editeur}}</td>
+   
     <td><button type="button" class="btn btn-default active">Suivi</button></td>
     
   </tr>
