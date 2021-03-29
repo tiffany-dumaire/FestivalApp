@@ -2,11 +2,14 @@
 const express = require('express');
 const app = express();
 
+// ----------- modules ajoutés pour le login
+const morgan = require('morgan');
+const jwt = require('jsonwebtoken');
 
-// ----------- cors : accept request from another domain
+// ----------- cors : Accepter les requêtes d'un autre domaine
 const cors = require('cors')
 
-var corsOptions = { // entries can come only from....
+var corsOptions = { // les entrées ne viendront que de : 
     origin: "http://localhost:4200",
     optionsSuccessStatus: 204 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 };
@@ -20,8 +23,10 @@ app.listen(port, () => {
  
 // ----------------------------------------------------
 
-app.use(cors(corsOptions));
-app.use(express.json());
+app.use(cors(corsOptions)); //Activation du CORS avec entrées sur le corsOption
+app.use(morgan('tiny')); //Activation de Morgan
+app.use(express.json()); //Activation du raw (json)
+app.use(express.urlencoded({ extended: true })) // Activation de x-wwww-form-urlencoded
 
 app.get('/', function (req, res) {
     res.send('hello world');
