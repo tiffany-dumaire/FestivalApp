@@ -1,4 +1,4 @@
-// ---------- Jeu
+// ---------- Contact
 
 const router = require('express').Router();
 const db = require('../database/dbConfig');
@@ -40,5 +40,18 @@ router.post('/create',(req,res,next) => {
         res.send(result);
     });
 });
+
+ //----------put-------------
+
+ /**
+  * Modification d'un contact
+  * /contact/modify
+  */
+  router.put('/modify',(req,res,next) => {
+    db.updateValue('Contact',req.body,function(result){
+        res.status(200).send(result);
+    });
+ });
+
 
 module.exports = router

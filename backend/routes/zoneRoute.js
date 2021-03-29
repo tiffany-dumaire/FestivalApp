@@ -22,11 +22,21 @@ router.get('/all', (req,res,next)=> {
 /// post
 
 /**
- * création d'une zone
+ * création d'une zone : nomZone
  * /zone/create
  */
 router.post('/create',(req,res,next) => {
     db.insertValue('Zone',req.body,function(result){
+        res.send(result);
+    });
+});
+
+/**
+ * Ajout de la zone au festival : idZone,idFestival
+ * /zonefestival/create
+ */
+router.post('/zoneFestival/create', (req,res,next) =>{
+    db.insertValue('ZoneFestival',req.body,function(result){
         res.send(result);
     });
 });

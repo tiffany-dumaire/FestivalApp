@@ -86,4 +86,16 @@ router.post('/create',(req,res,next) => {
     });
 });
 
+ //----------put-------------
+ /**
+  * Modification d'une societe
+  * /societe/modify
+  */
+  router.put('/modify',(req,res,next) => {
+    db.updateValue('Societe',req.body,function(result){
+        res.status(200).send(result);
+    });
+ });
+
+
 module.exports = router
