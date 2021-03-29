@@ -80,14 +80,15 @@ ngOnInit(): void {
   });
 }
 
-addFestival(){
+addFestival(form){
   this.festivalService.addFestival(this.form.value)
     .subscribe({
       next: (res)=>{
+       
         console.log(res);
         //this.display();
         //this.groupService.feed();
-       this.resetForm();
+        this.resetForm(form);
       }
     })
 }
@@ -112,7 +113,7 @@ addFestival(){
     }
   }
 
-  onSubmit(
+  /*onSubmit(
     nomFestival: string, 
     annee: number,
     nbTableE1: number,
@@ -128,9 +129,9 @@ addFestival(){
    
       this.festivalService.addFestival({nomFestival, annee, nbTableE1, nbTableE2, nbTableE3, m2E1, m2E2, m2E3, prixE1, prixE2, prixE3} as Festival).subscribe(festival => {
         this.festivals.push(festival);
-      });
+      })
       
-  }
+  }*/
   
 
 

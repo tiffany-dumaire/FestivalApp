@@ -11,7 +11,8 @@
     <form 
     name="form"
     [formGroup]="form"
-    (submit)="addFestival()"
+    (submit)="addFestival(form)"
+    #festivalForm="ngForm"
     >
     <div class="form-group">
     <input type="text" name="nomFestival" placeholder="Nom du festival" formControlName="nomFestival">
@@ -46,7 +47,7 @@
     <div class="form-group">
     <input type="email" name="prixE3" placeholder="Prix pour l'espace 3" formControlName="prixE3" >
   </div>
-    <input type="submit" value="Créer le festival">
+    <input type="submit" value="Créer le festival" >
     </form>
 </div>
 </body>
