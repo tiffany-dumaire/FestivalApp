@@ -12,7 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
+
 
 import { AboutComponent } from './components/about/about.component';
 import { FestivalComponent } from './components/festival/festival.component';
@@ -39,13 +39,14 @@ import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposa
 import { FormsModule } from '@angular/forms';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
+import { ControlMessageComponent } from './components/control-message/control-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RootNavComponent,
     LoginComponent,
-    HomeComponent,
+    
     AboutComponent,
     FestivalComponent,
     GameListFestivalComponent,
@@ -67,6 +68,7 @@ import { CreateSocietyComponent } from './components/create-society/create-socie
     SuiviExposantComponent,
     ReservedGameListComponent,
     CreateSocietyComponent,
+    ControlMessageComponent,
    
     
   ],

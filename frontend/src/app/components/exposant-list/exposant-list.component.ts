@@ -5,7 +5,7 @@ import { ExposantListService } from '../../service/exposant-list.service';
 @Component({
   selector: 'app-exposant-list',
   templateUrl: './exposant-list.component.html',
-  styleUrls: ['./exposant-list.component.css']
+  styleUrls: ['./exposant-list.component.scss']
 })
 export class ExposantListComponent implements OnInit {
 public exposantlist;

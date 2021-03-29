@@ -1,12 +1,19 @@
+.menu_i{
+  margin-top: 70px;
+  text-align: center; 
+  
+}
+
 .title{
-    font-size: 50px;
-    font-weight: 900;
-    margin: 50px 40px 40px;
-    color: rgba(12, 12, 14, 0.911);
+  font-size: 70px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+  color: rgb(3, 7, 71);
 }
 
 td{
-    color: black;
+    color: rgb(16, 28, 139);
+    font-size: 18px;
 }
 
 #gamess {
@@ -15,19 +22,29 @@ td{
     width: 100%;
   }
   
-  #gamess td, #gamess th {
-    border: 1px solid #ddd;
+  #gamess td{
+   
     padding: 8px;
+    text-align: center;
+  
   }
   
-  #gamess tr:nth-child(even){background-color: #f2f2f2;}
+  #gamess tr:nth-child(even){background-color:  rgba(255, 255, 255, 0.993);}
   
   #gamess tr:hover {background-color: #ddd;}
   
   #gamess th {
-    padding-top: 12px;
+    padding-top: 15px;
     padding-bottom: 12px;
-    text-align: left;
-    background-color: #1a2291;
+    text-align: center;
+    background-color: #092368;
     color: white;
+    height: 50px;
+    font-style:'Source Sans Pro', sans-serif;
+    font-size: 16px;
+  
+  }
+
+  #tableau{
+    margin-top: 60px;
   }

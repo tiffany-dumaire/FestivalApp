@@ -1,16 +1,15 @@
 
-
 .menu_i{
-    margin-top: 70px;
-    text-align: center; 
-    
+  margin-top: 70px;
+  text-align: center; 
+  
 }
 
 .title{
-    font-size: 70px;
-    font-weight: 900;
-    margin: 50px 40px 40px;
-    color: rgb(29, 30, 36);
+  font-size: 70px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+  color: rgb(3, 7, 71);
 }
 #navigation {
     width: 400px;

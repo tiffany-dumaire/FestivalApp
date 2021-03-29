@@ -2,11 +2,11 @@
 <div class="menu_i">
     <h1 class="title">Liste des jeux du festival</h1>
 </div>
-
+<div id="tableau">
 <table *ngIf="games" id="gamess">
   <tr>
-     <th>Nom Jeu</th><th>Nombre Joueurs Minimum</th>
-     <th>Nombre Joueurs Maximum</th><th>Age Minimum</th><th>Durée</th>
+     <th>Nom</th><th>Nombre de joueurs minimum</th>
+     <th>Nombre de joueurs maximum</th><th>Age minimum</th><th>Durée</th>
      <th>Lien notice</th> <th>Type de jeu</th><th>éditeur</th>
   </tr>
   <tr *ngFor="let game of games | async ">
@@ -21,3 +21,4 @@
     <td>{{game.idEditeur}}</td>
   </tr>
 </table>
+</div>
