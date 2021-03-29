@@ -8,20 +8,45 @@
     <div class="legendf">
       <legend> Créer un Festival</legend>
     </div>
-    <form #festivalForm="ngForm" (ngSubmit)="onSubmit(festival.nomFestival,festival.annee, festival.nbTableE1, festival.nbTableE2, festival.nbTableE3, festival.m2E1,festival.m2E2, festival.m2E3, festival.prixE1, festival.prixE2, festival.prixE3 )">
-    <input type="text" name="nomFestival" placeholder="Nom du festival"  #name="ngModel" [(ngModel)]="festival.nomFestival">
-    <input type="email" name="annee" placeholder="Année du festival" #name="ngModel" [(ngModel)]="festival.annee">
-    <input type="email" name="nbTableE1" placeholder="Nombre de tables pour l'espace 1" #name="ngModel" [(ngModel)]="festival.nbTableE1">
-    <input type="email" name="nbTableE2" placeholder="Nombre de tables pour l'espace 2" #name="ngModel" [(ngModel)]="festival.nbTableE2">
-    <input type="email" name="nbTableE3" placeholder="Nombre de tables pour l'espace 3" #name="ngModel" [(ngModel)]="festival.nbTableE3">
-    <input type="email" name="m2E1" placeholder="Nombre de tables par mètre carré pour l'espace 1" #name="ngModel" [(ngModel)]="festival.m2E1">
-    <input type="email" name="m2E2" placeholder="Nombre de tables par mètre carré pour l'espace 2"  #name="ngModel" [(ngModel)]="festival.m2E2">
-    <input type="email" name="m2E3" placeholder="Nombre de tables par mètre carré pour l'espace 3"  #name="ngModel" [(ngModel)]="festival.m2E3">
-    <input type="email" name="prixE1" placeholder="Prix pour l'espace 1"  #name="ngModel" [(ngModel)]="festival.prixE1">
-    <input type="email" name="prixE2" placeholder="Prix pour l'espace 2"  #name="ngModel" [(ngModel)]="festival.prixE2">
-    <input type="email" name="prixE3" placeholder="Prix pour l'espace 3"  #name="ngModel" [(ngModel)]="festival.prixE3">
-    
-    <input type="submit" value="Créer le festival" (click)="resetForm(festivalForm)">
+    <form 
+    name="form"
+    [formGroup]="form"
+    (submit)="addFestival()"
+    >
+    <div class="form-group">
+    <input type="text" name="nomFestival" placeholder="Nom du festival" formControlName="nomFestival">
+  </div>
+  <div class="form-group">
+  <input type="email" name="annee" placeholder="Année du festival" formControlName="annee" >
+</div>  
+<div class="form-group">   
+<input type="email" name="nbTableE1" placeholder="Nombre de tables pour l'espace 1" formControlName="nbTableE1">
+</div> 
+<div class="form-group">     
+<input type="email" name="nbTableE2" placeholder="Nombre de tables pour l'espace 2" formControlName="nbTableE2">
+</div>
+<div class="form-group">     
+<input type="email" name="nbTableE3" placeholder="Nombre de tables pour l'espace 3"formControlName="nbTableE3" >
+</div>
+<div class="form-group">  
+    <input type="email" name="m2E1" placeholder="Nombre de tables par mètre carré pour l'espace 1" formControlName="m2E1">
+    </div>
+    <div class="form-group">  
+    <input type="email" name="m2E2" placeholder="Nombre de tables par mètre carré pour l'espace 2" formControlName="m2E2" >
+    </div>
+    <div class="form-group">
+    <input type="email" name="m2E3" placeholder="Nombre de tables par mètre carré pour l'espace 3" formControlName="m2E3" >
+    </div>
+    <div class="form-group">
+    <input type="email" name="prixE1" placeholder="Prix pour l'espace 1" formControlName="prixE1" >
+    </div>
+    <div class="form-group">
+    <input type="email" name="prixE2" placeholder="Prix pour l'espace 2" formControlName="prixE2" >
+    </div>
+    <div class="form-group">
+    <input type="email" name="prixE3" placeholder="Prix pour l'espace 3" formControlName="prixE3" >
+  </div>
+    <input type="submit" value="Créer le festival">
     </form>
 </div>
 </body>

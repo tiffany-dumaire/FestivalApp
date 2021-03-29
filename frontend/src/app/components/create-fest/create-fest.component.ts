@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Festival } from '../../model/festival';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FestivalService } from '../../service/festival.service';
 import { tap } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
@@ -13,13 +14,83 @@ import { NgForm } from '@angular/forms';
 export class CreateFestComponent implements OnInit {
 public festivals: Festival[];
 public festival: Festival;
+public form:FormGroup;
   
-constructor(private festivalService: FestivalService) {
+constructor(private formBuilder:FormBuilder,private festivalService: FestivalService) {
 }
 
-  ngOnInit(): void {
-    this.resetForm();
-  }
+ngOnInit(): void {
+  this.form = this.formBuilder.group({
+    nomFestival: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    annee: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    nbTableE1: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    nbTableE2: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    nbTableE3: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    m2E1: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    m2E2: ['',[
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+    m2E3: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]
+    ],
+    prixE1: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    prixE2: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]],
+    prixE3: ['',[
+      //Validators.required, 
+      //Validators.minLength(4), 
+      //Validators.maxLength(4)
+    ]]
+  });
+}
+
+addFestival(){
+  this.festivalService.addFestival(this.form.value)
+    .subscribe({
+      next: (res)=>{
+        console.log(res);
+        //this.display();
+        //this.groupService.feed();
+       this.resetForm();
+      }
+    })
+}
 
   
   resetForm(form?: NgForm) {
