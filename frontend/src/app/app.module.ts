@@ -38,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
 import { FormsModule } from '@angular/forms';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
+import { CreateSocietyComponent } from './components/create-society/create-society.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { ReservedGameListComponent } from './components/reserved-game-list/reser
     AdminHomeFestComponent,
     SuiviExposantComponent,
     ReservedGameListComponent,
+    CreateSocietyComponent,
    
     
   ],

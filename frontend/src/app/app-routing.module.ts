@@ -21,7 +21,7 @@ import { OrgHomeComponent } from './components/org-home/org-home.component';
 import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
-
+import { CreateSocietyComponent } from './components/create-society/create-society.component';
 
 
 
@@ -88,7 +88,11 @@ const routes: Routes = [
   },
   {
     path: "jeuxreserves", component: ReservedGameListComponent
+  },
+  {
+    path: "creersociete", component: CreateSocietyComponent
   }
+
 
 ];
 
