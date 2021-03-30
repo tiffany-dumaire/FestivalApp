@@ -138,7 +138,7 @@ background-size: cover;
 #isEditeur {
     width: 1.4em;
 	height: 1.4em;
-	border: 1px solid #aaa;
+	border: 3px solid  rgb(8, 8, 136);
 	background: #FFF;
 	border-radius: .2em;
 	box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
@@ -147,13 +147,20 @@ background-size: cover;
 #isExposant {
     width: 1.4em;
 	height: 1.4em;
-	border: 1px solid #aaa;
+	border: 5px solid green;
 	background: #FFF;
-	border-radius: .2em;
+	border-radius: 3em;
 	box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
 }
 
-#id{
-    margin-top: 10px;
+#sub{
+    margin-top: 20px;
 }
 
+#exp{
+	font-weight: bold;
+}
+
+#edit{
+	font-weight: bold;
+}

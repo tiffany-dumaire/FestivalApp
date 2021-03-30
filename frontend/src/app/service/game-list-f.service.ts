@@ -18,4 +18,9 @@ getGames(): Observable<Game[]> {
 
   }
 
+  getGameDetails(idJeu) : Observable<any>{
+    var url = 'http://localhost:3100/jeu/all'
+    return this.http.get<any>(url+"/"+idJeu);
+  }
+
 }

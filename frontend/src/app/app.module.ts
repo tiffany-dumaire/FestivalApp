@@ -40,6 +40,7 @@ import { FormsModule } from '@angular/forms';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ControlMessageComponent } from './components/control-message/control-me
     ReservedGameListComponent,
     CreateSocietyComponent,
     ControlMessageComponent,
+    GameDetailsComponent,
    
     
   ],

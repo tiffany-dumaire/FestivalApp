@@ -10,6 +10,7 @@ import{GameListCService} from'src/app/service/game-list-c.service';
 })
 export class GameListEditorComponent implements OnInit {
   public games;
+  
 
   constructor(private gameListFService: GameListCService) { }
 

@@ -25,16 +25,17 @@
     </div> 
     <div id="global">
     <div class="form-group" id="right">     
-        <label for="isEditeur">Editeur ?</label>
+        <label id="edit" for="isEditeur">Editeur</label>
         <input type="checkbox" id="isEditeur" name="editeur" placeholder="Editeur" formControlName="editeur">  
     </div>
     <div class="form-group" id="left"> 
-        <label for="isExposant">Exposant ?</label>    
-    <input type="checkbox" id="isExposant" name="Exposant" placeholder="Exposant" formControlName="exposant" >
+        <label id="exp" for="isExposant">Exposant</label>    
+    <input type="checkbox" class=exp id="isExposant" name="Exposant" placeholder="Exposant" formControlName="exposant" >
     </div>
 </div>
-     
+     <div id="sub">
         <input type="submit" id="sub" value="Créer une société" >
+      </div>
         </form>
     </div>
     </body>

@@ -1,12 +1,21 @@
+
+
+.menu_i{
+  margin-top: 70px;
+  text-align: center; 
+  
+}
+
 .title{
-    font-size: 50px;
-    font-weight: 900;
-    margin: 50px 40px 40px;
-    color: rgba(12, 12, 14, 0.911);
+  font-size: 70px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+  color: rgb(3, 7, 71);
 }
 
 td{
-    color: black;
+    color: rgb(16, 28, 139);
+    font-size: 18px;
 }
 
 #fests {
@@ -15,19 +24,34 @@ td{
     width: 100%;
   }
   
-  #fests td, #gamess th {
-    border: 1px solid #ddd;
+  #fests td{
+   
     padding: 8px;
+    text-align: center;
+  
   }
   
-  #fests tr:nth-child(even){background-color: #f2f2f2;}
+  #fests tr:nth-child(even){background-color:  rgba(255, 255, 255, 0.993);}
   
   #fests tr:hover {background-color: #ddd;}
   
   #fests th {
-    padding-top: 12px;
+    padding-top: 15px;
     padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
+    text-align: center;
+    background-color: #092368;
     color: white;
+    height: 30px;
+    font-style:'Source Sans Pro', sans-serif;
+    font-size: 15px;
+  
+  }
+
+  #tableau{
+    margin-top: 60px;
+  }
+
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
   }

@@ -1,11 +1,13 @@
+<body>
 <div class="menu_i">
     <h1 class="title">Festival antérieurs</h1>
 </div>
 
+<div id="tableau">
 <table *ngIf="festivalsy" id="fests">
   <tr>
-     <th>Nom Festival</th><th>Année</th>
-     <th>Nombre de tables espace 1</th><th>Nombre de tables espace 2</th><th>Nombre de tables espace 3</th>
+     <th>Festival</th><th>Année</th>
+     <th>Tables espace 1</th><th>Tables espace 2</th><th>Tables espace 3</th>
      <th>Surface m<sup>2</sup> espace 1</th> <th>Surface m<sup>2</sup> espace 2</th><th>Surface m<sup>2</sup> espace 3</th>
      <th>Prix au m<sup>2</sup> espace 1</th><th>Prix au m<sup>2</sup> espace 2</th><th>Prix au m<sup>2</sup> espace 3</th>
   </tr>
@@ -25,3 +27,5 @@
 
   </tr>
 </table>
+</div>
+</body>

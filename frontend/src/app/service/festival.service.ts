@@ -30,4 +30,10 @@ export class FestivalService {
       return this.http.post<any>("http://localhost:3100/festival/create", festival)
     }
   
+    getFestivalRecent(): Observable<Festival> {
+      return this.http.get<Festival>('http://localhost:3100/festival/last')
+    
+      }
+    
+
   }
