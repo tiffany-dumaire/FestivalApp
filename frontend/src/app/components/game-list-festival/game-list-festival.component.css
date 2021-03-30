@@ -12,7 +12,7 @@
 }
 
 td{
-    color: rgb(16, 28, 139);
+    color: rgb(6, 13, 71);
     font-size: 18px;
 }
 
@@ -26,10 +26,11 @@ td{
    
     padding: 8px;
     text-align: center;
+    font-weight: bold;
   
   }
   
-  #gamess tr:nth-child(even){background-color:  rgba(255, 255, 255, 0.993);}
+  #gamess tr:nth-child(even){background-color:  rgba(233, 229, 229, 0.486);}
   
   #gamess tr:hover {background-color: #ddd;}
   
@@ -42,9 +43,38 @@ td{
     height: 50px;
     font-style:'Source Sans Pro', sans-serif;
     font-size: 16px;
-  
+    
+    
   }
 
   #tableau{
     margin-top: 60px;
   }
+
+  button {
+    background-color:  #0e7dc7;
+    border-radius:28px;
+    border:1px solid #124df0;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:13px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color:#2abf92;
+  }
+  button:active {
+    position:relative;
+    top:1px;
+  }
+
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
