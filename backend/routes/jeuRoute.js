@@ -35,9 +35,9 @@ router.get('/all/:idJeu',(req,res,next) => {
 
 /**
  * liste des jeux du festival le plus récent
- * /jeu/recent/allbyfestival/
+ * /jeu/last/allbyfestival
  */
-router.get('/recent/allbyfestival',(req,res,next) => {
+router.get('/last/allbyfestival',(req,res,next) => {
     db.queryAllWhere3OrderedOne('Jeu','JeuReserve','Reservation','Festival','idJeu','idJeu','idReservation','idReservation','idFestival','idFestival','annee=(SELECT MAX(annee) FROM Festival)','nomJeu',function(result){
         res.send(result);
     });
@@ -70,6 +70,55 @@ router.get('/allbyeditor/:idFestival',(req,res,next) => {
     });
 });
 
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}/{idEditeur}
+ */
+ router.get('/allbyeditor/:idFestival/:idEditeur',(req,res,next) => {
+    const id = req.params['idFestival'];
+    const ide = req.params['idEditeur'];
+    db.queryAllWhere3Ordered2('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},{"idEditeur":ide},'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}
+ */
+ router.get('/last/allbyeditor/',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere3OrderedCondition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}/{idEditeur}
+ */
+ router.get('/last/allbyeditor/:idEditeur',(req,res,next) => {
+    const id = req.params['idFestival'];
+    const ide = req.params['idEditeur'];
+    db.queryAllWhere3Ordered2Condition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idEditeur":ide},'Reservation.idFestival = (SELECT idFestival FROM Festival WHERE annee = (SELECT MAX(annee) FROM Festival))','nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+//---------------- Liste des jeux par exposant ------------------------------------------
+
+//----------get------------
+
+/** 
+ * jeux par exposant
+ * jeu/allbyexposant/{idFestival}
+ */
+ router.get('/allbyexposant/:idFestival',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere3Ordered('Jeu','JeuReserve','Reservation','Societe','idJeu','idJeu','idReservation','idReservation','idSociete','idSociete',{"idFestival":id},'nomSociete',function(result){
+        res.send(result);
+    });
+});
 
 //---------------- Liste des jeux par zone ------------------------------------------
 
@@ -82,6 +131,16 @@ router.get('/allbyeditor/:idFestival',(req,res,next) => {
 router.get('/allbyzone/:idFestival',(req,res,next) => {
     const id = req.params['idFestival'];
     db.queryAllWhere3Ordered('Jeu','JeuReserve','Zone','ZoneFestival','idJeu','idJeu','idZone','idZone','idZone','idZone',{"idFestival":id},'nomZone',function(result){
+        res.send(result);
+    });
+});
+
+/**
+ * Jeux par zone avec affichage éditeur et type de jeu
+ */
+router.get('/allbyzone/:idFestival/details',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryData('SELECT * FROM Jeu j,JeuReserve jr,Zone z,ZoneFestival zf,TypeJeu t,Societe s WHERE j.idJeu = jr.idJeu AND j.idTypeJeu = t.idTypeJeu AND z.idZone = jr.idZone AND j.idEditeur = s.idSociete AND z.idZone = zf.idZone AND zf.idFestival = '+id+' ORDER BY nomZone',function(result) {
         res.send(result);
     });
 });
@@ -109,5 +168,17 @@ router.get('/allbyzone/:idZone',(req,res,next) => {
         res.send(result);
     });
  });
+
+ //----------put-------------
+ /**
+  * Modification d'un jeu
+  * /jeu/modify
+  */
+  router.put('/modify',(req,res,next) => {
+    db.updateValue('Jeu',req.body,function(result){
+        res.status(200).send(result);
+    });
+ });
+
 
 module.exports = router

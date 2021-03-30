@@ -30,6 +30,16 @@ router.get('/allbyyear',(req,res,next) => {
 });
 
 /**
+ * Récupération du dernier festival
+ * /festival/last
+ */
+router.get('/last',(req,res,next) => {
+    db.queryLast('Festival','annee = (SELECT MAX(annee) FROM Festival)',function(result){
+        res.status(200).send(result);
+    });
+});
+
+/**
  * affichage d'un festival par id (dans l'url)
  * /festival/all/{id}
  */
@@ -52,28 +62,16 @@ router.post('/create',(req,res,next) => {
     });
 });
 
-// ----------------------------------------------------
-// ---------- modify / update an existing festival
-/* 
-router.put('/festival',function(req,res,next) {
-   const id = req.body.idFestival;
-   const year = req.body.anneeFestival;
-   // console.log(`update -> id=${id} - year=${year}`);
-   db.updateValue('festival', req.body,function(result){
-           res.status(200).send(result);
-   });
-}) */
+ //----------put-------------
+ /**
+  * Modification d'un festival
+  * /festival/modify
+  */
+  router.put('/modify',(req,res,next) => {
+    db.updateValue('Festival',req.body,function(result){
+        res.status(200).send(result);
+    });
+ });
 
-
-// ----------------------------------------------------
-// ---------- remove / delete an existing festival
-
-/* router.delete('/festival/:id', function(req,res,next) {
-   const id = req.params['id'];
-   db.deleteValue('festival','idFestival',id, function(result){
-       res.status(200).send(result);
-   });
-});
- */
 
 module.exports = router
