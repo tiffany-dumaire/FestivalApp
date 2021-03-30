@@ -38,7 +38,7 @@ const db = require('../database/dbConfig');
  * /contact/create
  */
 router.post('/create',(req,res,next) => {
-    db.insertValue('Contact',req.body,function(result){
+    db.insertValue('Facture',req.body,function(result){
         res.send(result);
     });
 });

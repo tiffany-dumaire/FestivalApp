@@ -14,7 +14,7 @@ const db = require('../database/dbConfig');
  */
 router.get('/all',(req,res,next) => {
     db.queryAllOrdered('Contact','nom',function(result){
-        res.send(result);
+        res.status(200).send(result);
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/all',(req,res,next) => {
 router.get('/all/:idSociete',(req,res,next) => {
     const id = req.params['idSociete'];  
     db.queryValue('Contact','idSociete',id,function(result){
-        res.send(result);
+        res.status(200).send(result);
     });
 });
  
@@ -37,7 +37,7 @@ router.get('/all/:idSociete',(req,res,next) => {
  */
 router.post('/create',(req,res,next) => {
     db.insertValue('Contact',req.body,function(result){
-        res.send(result);
+        res.status(200).send(result);
     });
 });
 
