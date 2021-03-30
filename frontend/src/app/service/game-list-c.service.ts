@@ -8,12 +8,12 @@ import { Festival } from 'src/app/model/festival'
 @Injectable({
   providedIn: 'root'
 })
-export class GameListFService {
+export class GameListCService {
 
 constructor( private http: HttpClient ) { }
-getGames(): Observable<Game[]> {
-  var url = 'http://localhost:3100/jeu/last/allbyfestival';
-  return this.http.get<Game[]>('http://localhost:3100/jeu/last/allbyfestival');
+getGamesEditor(): Observable<Game[]> {
+  //var url = 'http://localhost:3100/jeu/last/allbyfestival';
+  return this.http.get<Game[]>('http://localhost:3100/jeu/last/allbyeditor');
   
 
   }
