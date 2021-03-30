@@ -84,18 +84,17 @@ router.get('/allbyeditor/:idFestival',(req,res,next) => {
 
 /** 
  * jeux par editeur
- * jeu/allbyeditor/{idFestival}
+ * /jeu/allbyeditor/{idFestival}
  */
- router.get('/last/allbyeditor/',(req,res,next) => {
-    const id = req.params['idFestival'];
-    db.queryAllWhere3OrderedCondition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomSociete',function(result){
+ router.get('/last/allbyeditor',(req,res,next) => {
+    db.queryAllWhere3OrderedCondition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation','idFestival = (SELECT idFestival FROM Festival WHERE annee = (SELECT MAX(annee) FROM Festival))','nomSociete',function(result){
         res.send(result);
     });
 });
 
 /** 
  * jeux par editeur
- * jeu/allbyeditor/{idFestival}/{idEditeur}
+ * /jeu/allbyeditor/{idFestival}/{idEditeur}
  */
  router.get('/last/allbyeditor/:idEditeur',(req,res,next) => {
     const id = req.params['idFestival'];
