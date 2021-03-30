@@ -30,6 +30,16 @@ router.get('/allbyyear',(req,res,next) => {
 });
 
 /**
+ * Récupération du dernier festival
+ * /festival/last
+ */
+router.get('/last',(req,res,next) => {
+    db.queryLast('Festival','annee = (SELECT MAX(annee) FROM Festival)',function(result){
+        res.status(200).send(result);
+    });
+});
+
+/**
  * affichage d'un festival par id (dans l'url)
  * /festival/all/{id}
  */
@@ -58,7 +68,7 @@ router.post('/create',(req,res,next) => {
   * /festival/modify
   */
   router.put('/modify',(req,res,next) => {
-    db.updateValue('Jeu',req.body,function(result){
+    db.updateValue('Festival',req.body,function(result){
         res.status(200).send(result);
     });
  });

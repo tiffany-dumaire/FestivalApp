@@ -76,20 +76,13 @@ exports.queryAllWhere2Ordered = function(table,table2,table3,key,key2,key3,key4,
 }
 
 /**
- * Renvoie d'une double jointure avec condition sur 1 unique attribut trié dans l'ordre croissant de 'order' et condition ajoutée
- * @param {*} table : table 1
- * @param {*} table2 : table 2
- * @param {*} table3 : table 3
- * @param {*} key : clé table 1 pour jointure avec 2
- * @param {*} key2 : clé table 2 pour jointure avec 1
- * @param {*} key3 : clé table 2 pour jointure avec 3
- * @param {*} key4 : clé table 3 pour jointure avec 2
- * @param {*} parameter : condition
- * @param {*} order : attribut pour trié
- * @param {*} callback : appel pour renvoyer le résultat
+ * Renverra le résultat sur une table pour une condition particulière
+ * @param {*} table 
+ * @param {*} condition 
+ * @param {*} callback 
  */
- exports.queryAllWhere2OrderedConditionPlus = function(table,table2,table3,key,key2,key3,key4,condition, order,callback){
-    this.queryData(`SELECT * FROM ${table},${table2},${table3} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${condition} ORDER BY ${order}`,callback);
+exports.queryLast = function(table,condition,callback){
+    this.queryData(`SELECT * FROM ${table} WHERE ${condition}`,callback);
 }
 
 
@@ -110,7 +103,7 @@ exports.queryAllWhere2Ordered = function(table,table2,table3,key,key2,key3,key4,
  * @param {*} callback : appel pour renvoyer le résultat
  */
 exports.queryAllWhere3OrderedOne = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,parameter,order,callback){
-    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table3}.${key5} = ${table4}.${key6} AND ${parameter} ORDER BY ${order}`,callback);
+    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table3}.${key5} = ${table4}.${key6} AND ${firstvaluekey(parameter)} ORDER BY ${order}`,callback);
 }
 
 /**
@@ -130,7 +123,7 @@ exports.queryAllWhere3OrderedOne = function(table,table2,table3,table4,key,key2,
  * @param {*} callback : appel pour renvoyer le résultat
  */
  exports.queryAllWhere3OrderedLinkOnOne = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,parameter,order,callback){
-    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table2}.${key5} = ${table4}.${key6} AND ${parameter} ORDER BY ${order}`,callback);
+    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table2}.${key5} = ${table4}.${key6} AND ${firstvaluekey(parameter)} ORDER BY ${order}`,callback);
 }
 
 /**
@@ -150,7 +143,7 @@ exports.queryAllWhere3OrderedOne = function(table,table2,table3,table4,key,key2,
  * @param {*} callback : appel pour renvoyer le résultat
  */
  exports.queryAllWhere3OrderedLinkOnOne2 = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,parameter,parameter2,order,callback){
-    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table2}.${key5} = ${table4}.${key6} AND ${parameter} AND ${parameter2} ORDER BY ${order}`,callback);
+    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table2}.${key5} = ${table4}.${key6} AND ${firstvaluekey(parameter)} AND ${firstvaluekey(parameter2)} ORDER BY ${order}`,callback);
 }
 
 /**
@@ -185,12 +178,54 @@ exports.queryAllWhere3OrderedOne = function(table,table2,table3,table4,key,key2,
  * @param {*} key4 : clé table 3 pour jointure avec 2
  * @param {*} key5 : clé table 3 pour jointure avec 4
  * @param {*} key6 : clé table 4 pour jointure avec 3
+ * @param {*} condition : condition
+ * @param {*} order : attribut pour trié
+ * @param {*} callback : appel pour renvoyer le résultat
+ */
+ exports.queryAllWhere3OrderedCondition = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,condition,order,callback){
+    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table3}.${key5} = ${table4}.${key6} AND ${condition} ORDER BY ${order}`,callback);
+}
+
+/**
+ * Renvoie d'une triple jointure avec condition sur 1 unique attribut trié dans l'ordre croissant de 'order'
+ * @param {*} table : table 1
+ * @param {*} table2 : table 2
+ * @param {*} table3 : table 3
+ * @param {*} table4 : table 4
+ * @param {*} key : clé table 1 pour jointure avec 2
+ * @param {*} key2 : clé table 2 pour jointure avec 1
+ * @param {*} key3 : clé table 2 pour jointure avec 3
+ * @param {*} key4 : clé table 3 pour jointure avec 2
+ * @param {*} key5 : clé table 3 pour jointure avec 4
+ * @param {*} key6 : clé table 4 pour jointure avec 3
  * @param {*} parameter : condition
+ * @param {*} parameter2 : condition2
  * @param {*} order : attribut pour trié
  * @param {*} callback : appel pour renvoyer le résultat
  */
  exports.queryAllWhere3Ordered2 = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,parameter,parameter2,order,callback){
     this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table3}.${key5} = ${table4}.${key6} AND ${firstvaluekey(parameter)} AND ${firstvaluekey(parameter2)} ORDER BY ${order}`,callback);
+}
+
+/**
+ * Renvoie d'une triple jointure avec condition sur 1 unique attribut trié dans l'ordre croissant de 'order'
+ * @param {*} table : table 1
+ * @param {*} table2 : table 2
+ * @param {*} table3 : table 3
+ * @param {*} table4 : table 4
+ * @param {*} key : clé table 1 pour jointure avec 2
+ * @param {*} key2 : clé table 2 pour jointure avec 1
+ * @param {*} key3 : clé table 2 pour jointure avec 3
+ * @param {*} key4 : clé table 3 pour jointure avec 2
+ * @param {*} key5 : clé table 3 pour jointure avec 4
+ * @param {*} key6 : clé table 4 pour jointure avec 3
+ * @param {*} parameter : condition
+ * @param {*} condition : condition speciale
+ * @param {*} order : attribut pour trié
+ * @param {*} callback : appel pour renvoyer le résultat
+ */
+ exports.queryAllWhere3Ordered2Condition = function(table,table2,table3,table4,key,key2,key3,key4,key5,key6,parameter,condition,order,callback){
+    this.queryData(`SELECT * FROM ${table},${table2},${table3},${table4} WHERE ${table}.${key} = ${table2}.${key2} AND ${table2}.${key3} = ${table3}.${key4} AND ${table3}.${key5} = ${table4}.${key6} AND ${firstvaluekey(parameter)} AND ${condition} ORDER BY ${order}`,callback);
 }
 
 /**

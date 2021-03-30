@@ -35,9 +35,9 @@ router.get('/all/:idJeu',(req,res,next) => {
 
 /**
  * liste des jeux du festival le plus récent
- * /jeu/recent/allbyfestival/
+ * /jeu/last/allbyfestival
  */
-router.get('/recent/allbyfestival',(req,res,next) => {
+router.get('/last/allbyfestival',(req,res,next) => {
     db.queryAllWhere3OrderedOne('Jeu','JeuReserve','Reservation','Festival','idJeu','idJeu','idReservation','idReservation','idFestival','idFestival','annee=(SELECT MAX(annee) FROM Festival)','nomJeu',function(result){
         res.send(result);
     });
@@ -66,6 +66,41 @@ router.get('/allbyfestival/:idFestival',(req,res,next) => {
 router.get('/allbyeditor/:idFestival',(req,res,next) => {
     const id = req.params['idFestival'];
     db.queryAllWhere3Ordered('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}/{idEditeur}
+ */
+ router.get('/allbyeditor/:idFestival/:idEditeur',(req,res,next) => {
+    const id = req.params['idFestival'];
+    const ide = req.params['idEditeur'];
+    db.queryAllWhere3Ordered2('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},{"idEditeur":ide},'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}
+ */
+ router.get('/last/allbyeditor/',(req,res,next) => {
+    const id = req.params['idFestival'];
+    db.queryAllWhere3OrderedCondition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idFestival":id},'nomSociete',function(result){
+        res.send(result);
+    });
+});
+
+/** 
+ * jeux par editeur
+ * jeu/allbyeditor/{idFestival}/{idEditeur}
+ */
+ router.get('/last/allbyeditor/:idEditeur',(req,res,next) => {
+    const id = req.params['idFestival'];
+    const ide = req.params['idEditeur'];
+    db.queryAllWhere3Ordered2Condition('Societe','Jeu','JeuReserve','Reservation','idSociete','idEditeur','idJeu','idJeu','idReservation','idReservation',{"idEditeur":ide},'Reservation.idFestival = (SELECT idFestival FROM Festival WHERE annee = (SELECT MAX(annee) FROM Festival))','nomSociete',function(result){
         res.send(result);
     });
 });
