@@ -6,15 +6,15 @@
   <div id="tableau">
     <table *ngIf="games" id="gamess">
       <tr>
-        <th>EDITEUR</th>
         <th>JEU</th>
+        <th>EDITEUR</th>
         <!--th>DETAILS</th><th>Nombre de joueurs minimum</th>
        <th>Nombre de joueurs maximum</th><th>Age minimum</th><th>Durée</th>
        <th>Lien notice</th> <th>Type de jeu</th><th>éditeur</th-->
       </tr>
       <tr *ngFor="let game of games | async ">
-        <td>{{game.nomSociete}}</td>
         <td>{{game.nomJeu}}</td>
+        <td>{{game.nomSociete}}</td>
         <!--td><button href="/gamedetails">Détails</button></td>
       <td>{{game.nbJoueurMin}}</td>
       <td>{{game.nbJoueurMax}}</td>

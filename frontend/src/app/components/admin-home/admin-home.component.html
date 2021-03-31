@@ -1,9 +1,36 @@
 <body>
 
-  <div class="menu_i">
-    <h1 class="title">Espace administrateur</h1>
+  <div class="menu">
+    <h1 class="title1">Espace administrateur</h1>
   </div>
 
+  <div id="tableau">
+    <table *ngIf="festivalsy" id="fests">
+      <tr>
+         <th>Festival</th><th>Année</th><th>Détails</th>
+         <!--th>Tables espace 1</th><th>Tables espace 2</th><th>Tables espace 3</th>
+         <th>Surface m<sup>2</sup> espace 1</th> <th>Surface m<sup>2</sup> espace 2</th><th>Surface m<sup>2</sup> espace 3</th>
+         <th>Prix au m<sup>2</sup> espace 1</th><th>Prix au m<sup>2</sup> espace 2</th><th>Prix au m<sup>2</sup> espace 3</th-->
+      </tr>
+      <tr *ngFor="let festival of festivalsy | async ">
+        
+        <td>{{festival.nomFestival}}</td>
+        <td>{{festival.annee}}</td>
+        <td><button routerLink="/festivaldetails/{{festival.idFestival}}"
+          routerLinkActive="active">Infos</button></td>
+        <!--td>{{festival.nbTableE1}}</td>
+        <td>{{festival.nbTableE2}}</td>
+        <td>{{festival.nbTableE3}}</td>
+        <td>{{festival.m2E1}}</td>
+        <td>{{festival.m2E2}}</td>
+        <td>{{festival.m2E3}}</td>
+        <td>{{festival.prixE1}}</td>
+        <td>{{festival.prixE2}}</td>
+        <td>{{festival.prixE3}}</td-->
+    
+      </tr>
+    </table>
+    </div>
   <div class="nav">
     <ul id="navigation">
 
@@ -11,8 +38,8 @@
       <li><a href="/createfest" title="aller à la section 1">Créer un festival</a></li>
       <li><a href="/creersociete" title="aller à la section 3">Créer une société</a></li>
       <li><a href="/createacch" title="aller à la section 2">Créer un compte</a></li>
-      <li><a href="/addgame" title="aller à la section 2">Créer un jeu</a></li>
-      <li><a href="/festivals" title="aller à la section 2">Festivals antérieurs</a></li>
+     
+    
 
     </ul>
   </div>

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { Festival } from 'src/app/model/festival';
 
-import { FestivalService } from 'src/app/service/festival.service';
+
+import { ActivatedRoute } from '@angular/router';
+
+import { FestivalListService } from 'src/app/service/festival-list.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -10,16 +14,21 @@ import { FestivalService } from 'src/app/service/festival.service';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor(private festivalService: FestivalService) { }
-  public festivalrecent;
+  public festivalsy;
+  public festival;
+
+
+  constructor(private festlist: FestivalListService, private route: ActivatedRoute) { }
+
   ngOnInit(): void {
-    this.getFestivalRecent();
+    this.getFestivalsYear();
   }
 
-  getFestivalRecent(): void {
-    this.festivalrecent = this.festivalService.getFestivalRecent().pipe(
-      tap((festivalrecent) => { console.log(JSON.stringify(festivalrecent)); })
+  getFestivalsYear(): void {
+    this.festivalsy = this.festlist.getFestivalsYear().pipe(
+      tap((festivalsy) => { console.log(JSON.stringify(festivalsy)); })
     )
 
   }
+
 }

@@ -41,6 +41,7 @@ import { ReservedGameListComponent } from './components/reserved-game-list/reser
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { GameDetailsComponent } from './components/game-details/game-details.com
     CreateSocietyComponent,
     ControlMessageComponent,
     GameDetailsComponent,
+    FestivalDetailsComponent,
    
     
   ],

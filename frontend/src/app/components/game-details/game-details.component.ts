@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class GameDetailsComponent implements OnInit {
-  @Input() game: Game = null;
+  //@Input() game: Game = null;
   constructor(private gameListFService: GameListFService, private route: ActivatedRoute) { }
 
   public games = null;

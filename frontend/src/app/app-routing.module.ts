@@ -23,7 +23,7 @@ import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposa
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
-
+import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
 
 
 
@@ -97,6 +97,9 @@ const routes: Routes = [
   },
   {
     path: "gamedetails/:idJeu/:idRes", component: GameDetailsComponent
+  },
+  {
+    path: "festivaldetails/:idFestival", component: FestivalDetailsComponent
   }
 
 
