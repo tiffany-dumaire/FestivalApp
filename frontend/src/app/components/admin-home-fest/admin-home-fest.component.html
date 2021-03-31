@@ -4,41 +4,48 @@
         <h1 class="title">Festival - administrateur</h1>
     </div>
 
-<div id="tableau">
-    <table *ngIf="festivalrecent" id="fests">
-        <tr>
-           <th>Festival</th><th>Année</th>
-           <th>Nombre de tables espace 1</th><th>Nombre de tables espace 2</th><th>Nombre de tables espace 3</th>
-           <th>Surface m<sup>2</sup> espace 1</th> <th>Surface m<sup>2</sup> espace 2</th><th>Surface m<sup>2</sup> espace 3</th>
-           <th>Prix au m<sup>2</sup> espace 1</th><th>Prix au m<sup>2</sup> espace 2</th><th>Prix au m<sup>2</sup> espace 3</th>
-        </tr>
-        <tr *ngFor="let festival of festivalrecent | async ">
-          
-          <td>{{festival.nomFestival}}</td>
-          <td>{{festival.annee}}</td>
-          <td>{{festival.nbTableE1}}</td>
-          <td>{{festival.nbTableE2}}</td>
-          <td>{{festival.nbTableE3}}</td>
-          <td>{{festival.m2E1}}</td>
-          <td>{{festival.m2E2}}</td>
-          <td>{{festival.m2E3}}</td>
-          <td>{{festival.prixE1}}</td>
-          <td>{{festival.prixE2}}</td>
-          <td>{{festival.prixE3}}</td>
-      
-        </tr>
-      </table>
+    <div id="tableau">
+        <table *ngIf="festivalrecent" id="fests">
+            <tr>
+                <th>Festival</th>
+                <th>Année</th>
+                <th>Nombre de tables espace 1</th>
+                <th>Nombre de tables espace 2</th>
+                <th>Nombre de tables espace 3</th>
+                <th>Surface m<sup>2</sup> espace 1</th>
+                <th>Surface m<sup>2</sup> espace 2</th>
+                <th>Surface m<sup>2</sup> espace 3</th>
+                <th>Prix au m<sup>2</sup> espace 1</th>
+                <th>Prix au m<sup>2</sup> espace 2</th>
+                <th>Prix au m<sup>2</sup> espace 3</th>
+            </tr>
+            <tr *ngFor="let festival of festivalrecent | async ">
+
+                <td>{{festival.nomFestival}}</td>
+                <td>{{festival.annee}}</td>
+                <td>{{festival.nbTableE1}}</td>
+                <td>{{festival.nbTableE2}}</td>
+                <td>{{festival.nbTableE3}}</td>
+                <td>{{festival.m2E1}}</td>
+                <td>{{festival.m2E2}}</td>
+                <td>{{festival.m2E3}}</td>
+                <td>{{festival.prixE1}}</td>
+                <td>{{festival.prixE2}}</td>
+                <td>{{festival.prixE3}}</td>
+
+            </tr>
+        </table>
     </div>
-   
-        <ul id="navigation">
+
+    <ul id="navigation">
 
 
-            <li><a href="/explist" title="aller à la section 3">Liste des exposants</a></li>
-            <li><a href="/gamelistexp" title="aller à la section 3">Jeux du festival par exposants</a></li>
-            <li><a href="/reservations" title="aller à la section 3">Réservations</a></li>
-            <li><a href="/jeuxreserves" title="aller à la section 3">Liste des jeux du festival</a></li> 
+        <li><a href="/explist" title="aller à la section 3">Liste des exposants</a></li>
+        <li><a href="/gamelistexp" title="aller à la section 3">Jeux du festival par exposants</a></li>
+        <li><a href="/reservations" title="aller à la section 3">Réservations</a></li>
+        <li><a href="/jeuxreserves" title="aller à la section 3">Liste des jeux du festival</a></li>
 
-        </ul>
-   
+    </ul>
+
 
 </body>

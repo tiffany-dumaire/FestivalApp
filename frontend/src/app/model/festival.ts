@@ -10,6 +10,5 @@ export interface Festival{
     m2E3: number;
     prixE1: number;
     prixE2: number;
-    prixE3: number;
-   
+    prixE3: number;   
 }

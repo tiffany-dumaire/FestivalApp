@@ -12,104 +12,101 @@ import { NgForm } from '@angular/forms';
   providers: [FestivalService]
 })
 export class CreateFestComponent implements OnInit {
-public festivals: Festival[];
-public festival: Festival;
-public form:FormGroup;
-  
-constructor(private formBuilder:FormBuilder,private festivalService: FestivalService) {
-}
+  public festivals: Festival[];
+  public festival: Festival;
+  public form: FormGroup;
 
-ngOnInit(): void {
-  this.form = this.formBuilder.group({
-    nomFestival: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    annee: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    nbTableE1: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    nbTableE2: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    nbTableE3: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    m2E1: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    m2E2: ['',[
+  constructor(private formBuilder: FormBuilder, private festivalService: FestivalService) {
+  }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      nomFestival: ['', [
         //Validators.required, 
         //Validators.minLength(4), 
         //Validators.maxLength(4)
       ]],
-    m2E3: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]
-    ],
-    prixE1: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    prixE2: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    prixE3: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]]
-  });
-}
+      annee: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      nbTableE1: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      nbTableE2: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      nbTableE3: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      m2E1: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      m2E2: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      m2E3: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]
+      ],
+      prixE1: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      prixE2: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      prixE3: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]]
+    });
+  }
 
-addFestival(form){
-  this.festivalService.addFestival(this.form.value)
-    .subscribe({
-      next: (res)=>{
-       
-        console.log(res);
-        //this.display();
-        //this.groupService.feed();
-        this.resetForm(form);
-      }
-    })
-}
+  addFestival(form) {
+    this.festivalService.addFestival(this.form.value)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.resetForm(form);
+        }
+      })
+  }
 
-  
+
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
     this.festival = {
-    idFestival : null,
-    nomFestival: "", 
-    annee: null,
-    nbTableE1: null,
-    nbTableE2: null, 
-    nbTableE3: null,
-    m2E1: null,
-    m2E2: null,
-    m2E3: null,
-    prixE1: null,
-    prixE2: null,
-    prixE3: null
+      idFestival: null,
+      nomFestival: "",
+      annee: null,
+      nbTableE1: null,
+      nbTableE2: null,
+      nbTableE3: null,
+      m2E1: null,
+      m2E2: null,
+      m2E3: null,
+      prixE1: null,
+      prixE2: null,
+      prixE3: null
     }
   }
 
@@ -132,7 +129,5 @@ addFestival(form){
       })
       
   }*/
-  
-
 
 }

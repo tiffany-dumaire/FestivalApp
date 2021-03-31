@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
-import{FestivalService} from'src/app/service/festival.service';
+import { FestivalService } from 'src/app/service/festival.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -11,15 +11,15 @@ import{FestivalService} from'src/app/service/festival.service';
 export class AdminHomeComponent implements OnInit {
 
   constructor(private festivalService: FestivalService) { }
-public festivalrecent; 
+  public festivalrecent;
   ngOnInit(): void {
-  this.getFestivalRecent();
+    this.getFestivalRecent();
   }
- 
+
   getFestivalRecent(): void {
-    this.festivalrecent =  this.festivalService.getFestivalRecent().pipe(
-      tap( (festivalrecent) => {console.log(JSON.stringify(festivalrecent));})
+    this.festivalrecent = this.festivalService.getFestivalRecent().pipe(
+      tap((festivalrecent) => { console.log(JSON.stringify(festivalrecent)); })
     )
-    
+
   }
 }

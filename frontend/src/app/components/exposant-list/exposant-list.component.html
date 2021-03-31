@@ -1,25 +1,26 @@
 <body>
-<div class="menu_i">
+  <div class="menu_i">
     <h1 class="title">Liste des exposants</h1>
-</div>
+  </div>
 
-<div id="tableau">
-<table *ngIf="exposantlist" id="exp">
-  <tr>
-    
-     <th>Nom de la société</th><th>Adresse de la société</th>
-     <th>Pays</th>
-     <th>Suivi Exposant</th>
-  </tr>
-  <tr *ngFor="let exposant of exposantlist | async ">
-    
-    <td>{{exposant.nomSociete}}</td>
-    <td>{{exposant.adresse}}</td>
-    <td>{{exposant.pays}}</td>
-   
-    <td><button type="button" class="btn btn-default active">Suivi</button></td>
-    
-  </tr>
-</table>
-</div>
+  <div id="tableau">
+    <table *ngIf="exposantlist" id="exp">
+      <tr>
+
+        <th>Nom de la société</th>
+        <th>Adresse de la société</th>
+        <th>Pays</th>
+        <th>Suivi Exposant</th>
+      </tr>
+      <tr *ngFor="let exposant of exposantlist | async ">
+
+        <td>{{exposant.nomSociete}}</td>
+        <td>{{exposant.adresse}}</td>
+        <td>{{exposant.pays}}</td>
+
+        <td><button type="button" class="btn btn-default active">Suivi</button></td>
+
+      </tr>
+    </table>
+  </div>
 </body>

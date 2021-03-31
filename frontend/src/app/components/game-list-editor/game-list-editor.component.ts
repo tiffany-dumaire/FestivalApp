@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
-import{GameListCService} from'src/app/service/game-list-c.service';
+import { GameListCService } from 'src/app/service/game-list-c.service';
 
 @Component({
   selector: 'app-game-list-editor',
@@ -10,18 +10,17 @@ import{GameListCService} from'src/app/service/game-list-c.service';
 })
 export class GameListEditorComponent implements OnInit {
   public games;
-  
 
   constructor(private gameListFService: GameListCService) { }
 
   ngOnInit(): void {
-  this.getGamesEditor();
+    this.getGamesEditor();
   }
 
-   getGamesEditor(): void {
-    this.games =  this.gameListFService.getGamesEditor().pipe(
-      tap( (games) => {console.log(JSON.stringify(games));})
+  getGamesEditor(): void {
+    this.games = this.gameListFService.getGamesEditor().pipe(
+      tap((games) => { console.log(JSON.stringify(games)); })
     )
-    
+
   }
 }

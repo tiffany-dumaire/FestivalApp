@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
-import{FestivalListService} from'src/app/service/festival-list.service';
+import { FestivalListService } from 'src/app/service/festival-list.service';
 
 @Component({
   selector: 'app-festival-list',
@@ -9,19 +9,19 @@ import{FestivalListService} from'src/app/service/festival-list.service';
   styleUrls: ['./festival-list.component.css']
 })
 export class FestivalListComponent implements OnInit {
-public festivalsy;
+  public festivalsy;
 
   constructor(private festlist: FestivalListService) { }
 
   ngOnInit(): void {
-  this.getFestivalsYear();
+    this.getFestivalsYear();
   }
 
   getFestivalsYear(): void {
-    this.festivalsy =  this.festlist.getFestivalsYear().pipe(
-      tap( (festivalsy) => {console.log(JSON.stringify(festivalsy));})
+    this.festivalsy = this.festlist.getFestivalsYear().pipe(
+      tap((festivalsy) => { console.log(JSON.stringify(festivalsy)); })
     )
-    
+
   }
 
 }

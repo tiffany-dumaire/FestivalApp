@@ -7,19 +7,20 @@ import { ExposantListService } from '../../service/exposant-list.service';
   templateUrl: './exposant-list.component.html',
   styleUrls: ['./exposant-list.component.scss']
 })
+
 export class ExposantListComponent implements OnInit {
-public exposantlist;
+  public exposantlist;
 
   constructor(private explist: ExposantListService) { }
 
   ngOnInit(): void {
-  this.getExposants();
+    this.getExposants();
   }
 
   getExposants(): void {
-    this.exposantlist =  this.explist.getExposants().pipe(
-      tap( (exposantlist) => {console.log(JSON.stringify(exposantlist));})
+    this.exposantlist = this.explist.getExposants().pipe(
+      tap((exposantlist) => { console.log(JSON.stringify(exposantlist)); })
     )
-    
+
   }
 }

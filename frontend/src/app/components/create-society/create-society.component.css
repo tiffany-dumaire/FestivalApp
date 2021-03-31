@@ -6,7 +6,6 @@
 	text-align: center;
 }
 
-
 .form-style-5{
 	margin-top: 10px;
 	max-width: 500px;
@@ -18,13 +17,16 @@
 	border-radius: 8px;
 	
 }
+
 .form-style-5 fieldset{
 	border: none;
 }
+
 .form-style-5 legend {
 	font-size: 1.4em;
 	margin-bottom: 10px;
 }
+
 .form-style-5 label {
 	display: block;
 	margin-bottom: 8px;
@@ -56,6 +58,7 @@
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 30px;
 }
+
 .form-style-5 input[type="text"]:focus,
 .form-style-5 input[type="date"]:focus,
 .form-style-5 input[type="datetime"]:focus,
@@ -68,10 +71,12 @@
 .form-style-5 select:focus{
 	background: #d2d9dd;
 }
+
 .form-style-5 select{
 	-webkit-appearance: menulist-button;
 	height:35px;
 }
+
 .form-style-5 .number {
 	background: #1abc9c;
 	color: #fff;
@@ -87,6 +92,7 @@
 }
 
 .form-style-5 input[type="submit"],
+
 .form-style-5 input[type="button"]
 {
 	position: relative;
@@ -103,6 +109,7 @@
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
+
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
@@ -122,6 +129,7 @@ background-size: cover;
 #global {
     text-align: center;
 }
+
 #global #right {
     float:right;
     width:50%;
@@ -129,6 +137,7 @@ background-size: cover;
     color: green;
     font-size: 17px; 
 }
+
 #global #left {
     
     font-size: 17px; 

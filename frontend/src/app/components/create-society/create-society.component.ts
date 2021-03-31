@@ -13,62 +13,62 @@ import { Societe } from 'src/app/model/societe';
 
 })
 export class CreateSocietyComponent implements OnInit {
-public societe: Societe;
-  public form:FormGroup;
-  
-constructor(private formBuilder:FormBuilder,private festivalService: SocieteService) {
-}
+  public societe: Societe;
+  public form: FormGroup;
 
-ngOnInit(): void {
-  this.form = this.formBuilder.group({
-    nomSociete: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    adresse: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    pays: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    editeur: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]],
-    exposant: ['',[
-      //Validators.required, 
-      //Validators.minLength(4), 
-      //Validators.maxLength(4)
-    ]]
-  });
-}
+  constructor(private formBuilder: FormBuilder, private festivalService: SocieteService) {
+  }
 
-addSociete(form){
-  this.festivalService.addSociete(this.form.value)
-    .subscribe({
-      next: (res)=>{
-       
-        console.log(res);
-        //this.display();
-        //this.groupService.feed();
-        this.resetForm(form);
-      }
-    })
-}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      nomSociete: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      adresse: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      pays: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      editeur: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]],
+      exposant: ['', [
+        //Validators.required, 
+        //Validators.minLength(4), 
+        //Validators.maxLength(4)
+      ]]
+    });
+  }
 
-  
+  addSociete(form) {
+    this.festivalService.addSociete(this.form.value)
+      .subscribe({
+        next: (res) => {
+
+          console.log(res);
+          //this.display();
+          //this.groupService.feed();
+          this.resetForm(form);
+        }
+      })
+  }
+
+
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
     this.societe = {
-      idSociete : null,
-      nomSociete: "", 
+      idSociete: null,
+      nomSociete: "",
       adresse: "",
       pays: "",
       editeur: null,

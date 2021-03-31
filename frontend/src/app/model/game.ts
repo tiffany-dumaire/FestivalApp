@@ -1,14 +1,12 @@
-export interface Game{
-    idJeu : number;
-    nomJeu: string; 
+export interface Game {
+    idJeu: number;
+    nomJeu: string;
     nbJoueurMin: number;
     nbJoueurMax: number;
-    ageMin: number; 
+    ageMin: number;
     duree: number;
     lienNotice: Text;
     idTypeJeu: number;
     idEditeur: number;
-
-   
 }
 

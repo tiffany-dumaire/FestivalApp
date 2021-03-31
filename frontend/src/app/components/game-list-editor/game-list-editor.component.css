@@ -1,7 +1,6 @@
 .menu_i{
     margin-top: 70px;
-    text-align: center; 
-    
+    text-align: center;   
   }
   
   .title{
@@ -24,12 +23,10 @@
     }
     
     #gamess td{
-     
       padding: 8px;
       text-align: center;
       font-weight: bold;
-      font-family: Verdana, Arial, Helvetica, sans-serif;
-    
+      font-family: Verdana, Arial, Helvetica, sans-serif;  
     }
     
     #gamess tr:nth-child(even){background-color:  rgba(233, 229, 229, 0.486);}
@@ -46,8 +43,6 @@
       font-style:'Source Sans Pro', sans-serif;
       font-size: 20px;
       font-family: Verdana, Arial, Helvetica, sans-serif;
-      
-      
     }
   
     #tableau{
@@ -68,9 +63,11 @@
       text-shadow:0px 1px 0px #2f6627;
       font-weight: bold;
     }
+    
     button:hover {
       background-color:#2abf92;
     }
+    
     button:active {
       position:relative;
       top:1px;
