@@ -15,10 +15,10 @@ export class GameListEditorComponent implements OnInit {
   constructor(private gameListFService: GameListCService) { }
 
   ngOnInit(): void {
-  this.getGames();
+  this.getGamesEditor();
   }
 
-   getGames(): void {
+   getGamesEditor(): void {
     this.games =  this.gameListFService.getGamesEditor().pipe(
       tap( (games) => {console.log(JSON.stringify(games));})
     )

@@ -12,7 +12,7 @@
   <tr>
      <th>JEU</th><th>JOUEURS MINIMUM</th>
      <th>JOUEURS MAXIMUM</th><th>PEGI</th><th>DUREE</th>
-     <th>LIEN NOTICE</th> <th>DETAILS</th>
+      <th>DETAILS</th>
   </tr>
   <tr *ngFor="let game of games | async ">
     
@@ -22,7 +22,7 @@
     <td>{{game.nbJoueurMax}}</td>
     <td>{{game.ageMin}}</td>
     <td>{{game.duree}}</td>
-    <td>{{game.lienNotice}}</td>
+    
     <td><button routerLink="/gamedetails/{{game.idJeu}}/{{game.idReservation}}" routerLinkActive="active">Détails</button></td>
     
   </tr>

@@ -18,4 +18,11 @@ getGamesEditor(): Observable<Game[]> {
 
   }
 
+  getGamesArea(): Observable<Game[]> {
+    //var url = 'http://localhost:3100/jeu/last/allbyfestival';
+    return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyeditor');
+    
+  
+    }
+
 }
