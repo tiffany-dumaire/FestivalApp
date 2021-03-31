@@ -10,7 +10,7 @@ export class ExposantListService {
 
   constructor(private http: HttpClient) { }
   getExposants(): Observable<Exposant[]> {
-    return this.http.get<Exposant[]>('http://localhost:3100/societe/exposant/all')
+    return this.http.get<Exposant[]>('https://backend-festival-app.herokuapp.com/societe/exposant/all')
   
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Game } from 'src/app/model/game';
 import{GameListFService} from'src/app/service/game-list-f.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,8 +12,10 @@ import{GameListFService} from'src/app/service/game-list-f.service';
 })
 export class GameListFestivalComponent implements OnInit {
   public games;
+  public gamedetail;
+  public game: Game;
 
-  constructor(private gameListFService: GameListFService) { }
+  constructor(private gameListFService: GameListFService, private router : Router) { }
 
   ngOnInit(): void {
   this.getGames();
@@ -23,6 +26,17 @@ export class GameListFestivalComponent implements OnInit {
       tap( (games) => {console.log(JSON.stringify(games));})
     )
     
+  
+  
   }
+
+
+  
+  
+  
+    
+    
+
+
 
 }

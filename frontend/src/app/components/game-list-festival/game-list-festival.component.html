@@ -1,6 +1,9 @@
 
 <body>
-<div class="menu_i">
+ 
+<!--app-game-detail [game]="this.game"></app-game-detail-->
+
+  <div class="menu_i">
     <h1 class="title">Liste des jeux du festival</h1>
 </div>
 
@@ -20,7 +23,7 @@
     <td>{{game.ageMin}}</td>
     <td>{{game.duree}}</td>
     <td>{{game.lienNotice}}</td>
-    <td><button href="/gamedetails">Détails</button></td>
+    <td><button routerLink="/gamedetails/{{game.idJeu}}/{{game.idReservation}}" routerLinkActive="active">Détails</button></td>
     
   </tr>
 </table>

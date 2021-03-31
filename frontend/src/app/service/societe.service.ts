@@ -25,7 +25,7 @@ export class SocieteService {
   
     //}
     public addSociete(societe): Observable<any> {
-      return this.http.post<any>("http://localhost:3100/societe/create", societe)
+      return this.http.post<any>("https://backend-festival-app.herokuapp.com/societe/create", societe)
     }
   
   }

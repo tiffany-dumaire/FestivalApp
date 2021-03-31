@@ -12,15 +12,17 @@ export class GameListFService {
 
 constructor( private http: HttpClient ) { }
 getGames(): Observable<Game[]> {
-  var url = 'http://localhost:3100/jeu/last/allbyfestival';
-  return this.http.get<Game[]>('http://localhost:3100/jeu/last/allbyfestival');
+  //var url = 'http://localhost:3100/jeu/last/allbyfestival';
+  return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyfestival');
   
 
   }
 
-  getGameDetails(idJeu) : Observable<any>{
-    var url = 'http://localhost:3100/jeu/all'
-    return this.http.get<any>(url+"/"+idJeu);
+  getGameDetails(idJeu, idReservation) : Observable<Game[]>{
+    
+    var url = 'https://backend-festival-app.herokuapp.com/jeu/all'
+    return this.http.get<Game[]>(url+"/"+idJeu+"/"+idReservation);
+
   }
 
 }

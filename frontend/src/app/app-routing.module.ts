@@ -96,7 +96,7 @@ const routes: Routes = [
     path: "creersociete", component: CreateSocietyComponent
   },
   {
-    path: "gamedetails", component: GameDetailsComponent
+    path: "gamedetails/:idJeu/:idRes", component: GameDetailsComponent
   }
 
 

@@ -1,1 +1,8 @@
 <p>game-details works!</p>
+<div *ngIf="games">
+    <div *ngFor="let game of games | async">{{game.nomJeu}}</div>
+    <div *ngFor="let game of games | async">{{game.quantiteExposee}}</div>
+    
+    
+</div>
+

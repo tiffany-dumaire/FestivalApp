@@ -13,7 +13,7 @@ export class GameListCService {
 constructor( private http: HttpClient ) { }
 getGamesEditor(): Observable<Game[]> {
   //var url = 'http://localhost:3100/jeu/last/allbyfestival';
-  return this.http.get<Game[]>('http://localhost:3100/jeu/last/allbyeditor');
+  return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyeditor');
   
 
   }

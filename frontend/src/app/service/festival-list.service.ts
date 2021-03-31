@@ -11,7 +11,7 @@ export class FestivalListService {
 
   constructor( private http: HttpClient ) { }
   getFestivalsYear(): Observable<Festival[]> {
-    return this.http.get<Festival[]>('http://localhost:3100/festival/allbyyear')
+    return this.http.get<Festival[]>('https://backend-festival-app.herokuapp.com/festival/allbyyear')
   
     }
   
