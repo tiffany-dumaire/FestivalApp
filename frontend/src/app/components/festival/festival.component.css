@@ -24,10 +24,10 @@
 }
 
 #navigation {
-    width: 400px;
+    width: 500px;
     list-style: none;
     margin-top: 50px;
-    margin-left: 430px;
+    margin-left: 380px;
     padding: 0;
     text-align: center;
 }
@@ -44,23 +44,24 @@
     background: rgb(5, 3, 80) ;
     height: 80px;
     color: #fff ;
-   
+    margin-top: 30px;
     line-height: 50;
     text-align: center ;
     text-decoration: none ;
     padding: 4px 0 ;
     line-height: 60px;
-    font-size: 28px;  
+    font-size: 28px; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
   }
   
   #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
     background: rgb(4, 9, 90) ;
     color: white;
-    margin-top: 45px; 
+    
   }
 
   .nav{
-      margin-top: 45px;
+      margin-top: 60px;
   }
 
   body{
