@@ -29,7 +29,6 @@ import { CreateAccountOrgComponent } from './components/create-account-org/creat
 import { AddGameComponent } from './components/add-game/add-game.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
-import { FestivalListComponent } from './components/festival-list/festival-list.component';
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
@@ -64,7 +63,6 @@ import { ReservationListComponent } from './service/reservation-list/reservation
     AddGameComponent,
     ReservationsComponent,
     AdminHomeComponent,
-    FestivalListComponent,
     ExposantListComponent,
     GameListExpComponent,
     OrgHomeComponent,

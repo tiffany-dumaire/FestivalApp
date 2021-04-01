@@ -14,7 +14,6 @@ import { CreateAccountOrgComponent } from './components/create-account-org/creat
 import { AddGameComponent } from './components/add-game/add-game.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
-import { FestivalListComponent } from './components/festival-list/festival-list.component';
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
@@ -24,7 +23,7 @@ import { ReservedGameListComponent } from './components/reserved-game-list/reser
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
-
+import { ReservationListComponent } from './service/reservation-list/reservation-list.component';
 
 
 
@@ -66,13 +65,10 @@ const routes: Routes = [
     path: "addgame", component: AddGameComponent
   },
   {
-    path: "reservations", component: ReservationsComponent
+    path: "reservations/:idFestival", component: ReservationsComponent
   },
   {
     path: "adminhome", component: AdminHomeComponent
-  },
-  {
-    path: "festivals", component: FestivalListComponent
   },
   {
     path: "explist/:idFestival", component: ExposantListComponent
@@ -100,7 +96,8 @@ const routes: Routes = [
   },
   {
     path: "festivaldetails/:idFestival", component: FestivalDetailsComponent
-  }
+  },
+  
 
 
 ];

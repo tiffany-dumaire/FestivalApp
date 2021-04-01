@@ -1,6 +1,5 @@
 <body>
-    
-    
+
     <div *ngIf="festival" class="menu_i"><p class="title">Jeu : {{festival.nomFestival}}</p></div>
     <div class="card">
     <mat-card class="example-card">
@@ -26,7 +25,7 @@
             <li><a routerLink="/explist/{{festival.idFestival}}" title="aller à la section 3"
                     routerLinkActive="active">Liste des exposants</a>
             </li>
-            <li><a routerLink="" title="aller à la section 3" routerLinkActive="active">Réservations</a>
+            <li><a routerLink="/reservations/{{festival.idFestival}}" routerLinkActive="active" title="aller à la section 3" routerLinkActive="active">Réservations</a>
             </li>
         </ul>
     </div>
