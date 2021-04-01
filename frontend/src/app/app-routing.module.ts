@@ -17,13 +17,12 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
-import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
-import { ReservationListComponent } from './service/reservation-list/reservation-list.component';
+
 
 
 
@@ -78,9 +77,6 @@ const routes: Routes = [
   },
   {
     path: "orghome", component: OrgHomeComponent
-  },
-  {
-    path: "adminhomefest", component: AdminHomeFestComponent
   },
   {
     path: "suiviexposant/:idFestival/:idSociete", component: SuiviExposantComponent

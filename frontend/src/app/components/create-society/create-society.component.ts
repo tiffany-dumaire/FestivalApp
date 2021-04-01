@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Festival } from '../../model/festival';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SocieteService } from '../../service/societe.service';
-import { tap } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 import { Societe } from 'src/app/model/societe';
 
@@ -12,6 +10,7 @@ import { Societe } from 'src/app/model/societe';
   styleUrls: ['./create-society.component.css']
 
 })
+
 export class CreateSocietyComponent implements OnInit {
   public societe: Societe;
   public form: FormGroup;
@@ -53,10 +52,7 @@ export class CreateSocietyComponent implements OnInit {
     this.festivalService.addSociete(this.form.value)
       .subscribe({
         next: (res) => {
-
           console.log(res);
-          //this.display();
-          //this.groupService.feed();
           this.resetForm(form);
         }
       })

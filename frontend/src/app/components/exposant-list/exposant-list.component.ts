@@ -13,14 +13,11 @@ export class ExposantListComponent implements OnInit {
 
   @Input() exposants: Societe[] = null;
 
-
   constructor(private explist: ExposantListService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.route.snapshot.paramMap.has('idFestival')) {
-
       const idFestival = this.route.snapshot.paramMap.get('idFestival');
-
       this.getExposantsFestival(idFestival);
     }
   }

@@ -32,14 +32,12 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
 import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
 import { OrgHomeComponent } from './components/org-home/org-home.component';
-import { AdminHomeFestComponent } from './components/admin-home-fest/admin-home-fest.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
 import { FormsModule } from '@angular/forms';
 import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
-import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
 import { ReservationListComponent } from './service/reservation-list/reservation-list.component';
@@ -65,12 +63,10 @@ import { ReservationListComponent } from './service/reservation-list/reservation
     AdminHomeComponent,
     ExposantListComponent,
     GameListExpComponent,
-    OrgHomeComponent,
-    AdminHomeFestComponent,
+    OrgHomeComponent, 
     SuiviExposantComponent,
     ReservedGameListComponent,
     CreateSocietyComponent,
-    ControlMessageComponent,
     GameDetailsComponent,
     FestivalDetailsComponent,
     ReservationListComponent,

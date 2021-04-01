@@ -31,18 +31,14 @@ export class FestivalDetailsComponent implements OnInit {
   getFestivalById(idFestival): void {
     console.log(idFestival);
     this.festivalService.getFestivalById(idFestival)
-        .subscribe(
-        (festivalDTO) => { if (festivalDTO) { 
-          this.festival = festivalDTO; 
-          console.log(`festival=${JSON.stringify(this.festival)}`);
-        }}
+      .subscribe(
+        (festivalDTO) => {
+          if (festivalDTO) {
+            this.festival = festivalDTO;
+            console.log(`festival=${JSON.stringify(this.festival)}`);
+          }
+        }
       );
-    // .pipe(
-    //   tap((festival) => {
-    //     this.typename = typeof festival;
-    //     console.log(JSON.stringify(festival));
-    //   })
-    // );
   }
 
 }

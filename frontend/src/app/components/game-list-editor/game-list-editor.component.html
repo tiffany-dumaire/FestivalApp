@@ -9,21 +9,12 @@
         <th>JEU</th>
         <th>EDITEUR</th>
         <th>DETAILS</th>
-        <!--th>DETAILS</th><th>Nombre de joueurs minimum</th>
-       <th>Nombre de joueurs maximum</th><th>Age minimum</th><th>Durée</th>
-       <th>Lien notice</th> <th>Type de jeu</th><th>éditeur</th-->
       </tr>
       <tr *ngFor="let game of games | async ">
         <td>{{game.nomJeu}}</td>
         <td>{{game.nomSociete}}</td>
         <td><button routerLink="/gamedetails/{{game.idJeu}}/{{game.idReservation}}"
           routerLinkActive="active">Détails</button></td>
-        <!--td><button href="/gamedetails">Détails</button></td>
-      <td>{{game.nbJoueurMin}}</td>
-      <td>{{game.nbJoueurMax}}</td>
-      <td>{{game.ageMin}}</td>
-      <td>{{game.duree}}</td>
-      <td>{{game.lienNotice}}</td-->
       </tr>
     </table>
   </div>

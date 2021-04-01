@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Game } from 'src/app/model/game';
-import{GameListFService} from'src/app/service/game-list-f.service';
+import { GameListFService } from 'src/app/service/game-list-f.service';
 import { Router } from '@angular/router';
 
 
@@ -15,28 +15,15 @@ export class GameListFestivalComponent implements OnInit {
   public gamedetail;
   public game: Game;
 
-  constructor(private gameListFService: GameListFService, private router : Router) { }
+  constructor(private gameListFService: GameListFService, private router: Router) { }
 
   ngOnInit(): void {
-  this.getGames();
+    this.getGames();
   }
 
-   getGames(): void {
-    this.games =  this.gameListFService.getGames().pipe(
-      tap( (games) => {console.log(JSON.stringify(games));})
+  getGames(): void {
+    this.games = this.gameListFService.getGames().pipe(
+      tap((games) => { console.log(JSON.stringify(games)); })
     )
-    
-  
-  
   }
-
-
-  
-  
-  
-    
-    
-
-
-
 }

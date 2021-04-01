@@ -21,7 +21,6 @@ export class GameListAreaComponent implements OnInit {
     this.games = this.gameListFService.getGamesArea().pipe(
       tap((games) => { console.log(JSON.stringify(games)); })
     )
-
   }
 
 }

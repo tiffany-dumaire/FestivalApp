@@ -28,18 +28,13 @@ export class GameDetailsComponent implements OnInit {
   getGameDetails(idJeu, idReservation) {
 
     this.gameListFService.getGameDetails(idJeu, idReservation)
-    .subscribe(
-      (gameDTO) => { if (gameDTO) { 
-        this.game = gameDTO; 
-      }}
-    );
-    /*this.toto = this.gameListFService.getGameDetails(idJeu, idReservation).pipe(
-        tap((gamedetail) => {
-        console.log("coucou");
-        console.log(JSON.stringify(gamedetail));
-
-      })
-    )*/
+      .subscribe(
+        (gameDTO) => {
+          if (gameDTO) {
+            this.game = gameDTO;
+          }
+        }
+      );
   }
 
 

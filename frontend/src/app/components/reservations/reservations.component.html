@@ -1,28 +1,36 @@
 <body>
     <div class="menu_i">
-      <h1 class="title">Liste des réservations</h1>
+        <h1 class="title">Liste des réservations</h1>
     </div>
-  
+
     <div id="tableau">
-      <table *ngIf="reservations" id="exp">
-        <tr>
-  
-          <th>Nom de l'exposant</th>
-          <th>Adresse de l'exposant</th>
-          <th>Pays</th>
-          <th>Suivi Exposant</th>
-        </tr>
-        <tr *ngFor="let reservation of reservations">
-  
-          <td>{{reservation.nbTableE1}}</td>
-          <td>{{reservation.nbTableE2}}</td>
-          <td>{{reservation.nbTableE3}}</td>
-  
-          <!--td><button routerLink="/suiviexposant/{{exposant.idFestival}}/{{exposant.idSociete}}" routerLinkActive="active" type="button" class="btn btn-default active">Suivi</button></td-->
-  
-        </tr>
-      </table>
+        <table *ngIf="reservations" id="exp">
+            <tr>
+
+                <th>Nombre tables espace 1</th>
+                <th>Nombre tables espace 2</th>
+                <th>Nombre tables espace 3</th>
+                <th>M</th>
+                <th>Suivi Exposant</th>
+                <th>Suivi Exposant</th>
+                <th>Suivi Exposant</th>
+                <th>Suivi Exposant</th>
+            </tr>
+            <tr *ngFor="let reservation of reservations">
+
+                <td>{{reservation.nbTableE1}}</td>
+                <td>{{reservation.nbTableE2}}</td>
+                <td>{{reservation.nbTableE3}}</td>
+                <td>{{reservation.m2E1}}</td>
+                <td>{{reservation.m2E2}}</td>
+                <td>{{reservation.m2E3}}</td>
+                <td>{{reservation.animateur}}</td>
+                <td>{{reservation.present}}</td>
+
+
+                <!--td><button routerLink="/suiviexposant/{{exposant.idFestival}}/{{exposant.idSociete}}" routerLinkActive="active" type="button" class="btn btn-default active">Suivi</button></td-->
+
+            </tr>
+        </table>
     </div>
-  </body>
-
-
+</body>

@@ -20,15 +20,16 @@ export class SuiviExposantComponent implements OnInit {
       const idSociete = this.route.snapshot.paramMap.get('idSociete');
       this.getSuivisExposant(idFestival, idSociete);
     }
-  
+
   }
 
   public getSuivisExposant(idFestival, idSociete): void {
     this.suiviexposantService.getSuivisExposant(idFestival, idSociete).subscribe(
-      (SuiviexposantsDTO) => { if (SuiviexposantsDTO) { 
-        this.suiviexposants = SuiviexposantsDTO; 
-      }}
+      (SuiviexposantsDTO) => {
+        if (SuiviexposantsDTO) {
+          this.suiviexposants = SuiviexposantsDTO;
+        }
+      }
     );
   }
-
 }
