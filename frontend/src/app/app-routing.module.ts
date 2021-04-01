@@ -87,7 +87,7 @@ const routes: Routes = [
     path: "adminhomefest", component: AdminHomeFestComponent
   },
   {
-    path: "suiviexposant", component: SuiviExposantComponent
+    path: "suiviexposant/:idFestival/:idSociete", component: SuiviExposantComponent
   },
   {
     path: "jeuxreserves", component: ReservedGameListComponent

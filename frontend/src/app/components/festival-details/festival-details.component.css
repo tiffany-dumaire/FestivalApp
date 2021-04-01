@@ -16,7 +16,7 @@
   #navigation li a {
     display: block ;
     background: rgb(5, 3, 80) ;
-    height: 80px;
+    height: 65px;
     color: #fff ;  
     line-height: 50;
     text-align: center ;
@@ -29,5 +29,62 @@
   #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
     background: rgb(4, 9, 90) ;
     color: white;
-    margin-top: 45px; 
+  
   }
+
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .menu_i{
+    margin-top: 70px;
+    text-align: center;  
+  }
+
+  .title{
+    font-size: 70px;
+    font-weight: 900;
+    margin: 50px 40px 40px;
+    color: rgb(3, 7, 71);
+  }
+  .title1{
+    margin-left: 60px;
+  }
+
+#nav {
+    margin-top: 15px;
+}
+
+#infos {
+   margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.example-card {
+    max-width: 400px;
+    display: inline-block;
+    background: rgb(3, 7, 71);
+    
+    
+}
+mat-card-content{
+    font-size: 20px;
+}
+
+mat-card-title{
+    text-align: center;
+}
+
+.card{
+    text-align: center;
+   
+}
+
+.example-card1 {
+    max-width: 400px;
+    display: inline-block;   
+}

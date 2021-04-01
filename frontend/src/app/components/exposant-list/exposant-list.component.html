@@ -7,18 +7,18 @@
     <table *ngIf="exposants" id="exp">
       <tr>
 
-        <th>Nom de l'esxposant</th>
+        <th>Nom de l'exposant</th>
         <th>Adresse de l'exposant</th>
         <th>Pays</th>
-        <!--th>Suivi Exposant</th-->
+        <th>Suivi Exposant</th>
       </tr>
-      <tr *ngFor="let exposant of exposants  ">
+      <tr *ngFor="let exposant of exposants">
 
         <td>{{exposant.nomSociete}}</td>
         <td>{{exposant.adresse}}</td>
         <td>{{exposant.pays}}</td>
 
-        <!--td><button type="button" class="btn btn-default active">Suivi</button></td-->
+        <td><button routerLink="/suiviexposant/{{exposant.idFestival}}/{{exposant.idSociete}}" routerLinkActive="active" type="button" class="btn btn-default active">Suivi</button></td>
 
       </tr>
     </table>

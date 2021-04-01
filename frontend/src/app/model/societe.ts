@@ -7,8 +7,4 @@ export class Societe{
     editeur: number;
     exposant: number;
     
-
-
-
-
 }

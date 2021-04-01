@@ -1,9 +1,33 @@
-<div *ngIf="festival">{{festival.nomFestival}}</div>
-<div>
-    <ul id="navigation">
-        <li><a routerLink="/explist/{{festival.idFestival}}" title="aller à la section 3" routerLinkActive="active">Liste des exposants</a>
-        </li>
-        <li><a routerLink="" title="aller à la section 3" routerLinkActive="active">Suivi exposants</a>
-        </li>
-    </ul>
+<body>
+    
+    
+    <div *ngIf="festival" class="menu_i"><p class="title">Jeu : {{festival.nomFestival}}</p></div>
+    <div class="card">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title><div class="title1">Informations</div></mat-card-title>
+          </mat-card-header>
+        <mat-card-content>
+        <p>Année : {{festival.annee}}<br>
+        Nombre de tables espace 1 : {{festival.nbTableE1}}<br>
+        Nombre de tables espace 2 : {{festival.nbTableE2}}<br>
+        Nombre de tables espace 3 : {{festival.nbTableE3}}<br>
+        Tables par m<sup>2</sup> espace 1 : {{festival.m2E1}}<br>
+        Tables par m<sup>2</sup> espace 2 : {{festival.m2E2}}<br>
+        Tables par m<sup>2</sup> espace 3 : {{festival.m2E3}}<br>
+        Prix pour l'espace 1 : {{festival.prixE1}}<br>
+        Prix pour l'espace 2 : {{festival.prixE2}}<br>
+        Prix pour l'espace 3 : {{festival.prixE3}}</p>
+    </mat-card-content>
+    </mat-card>
 </div>
+    <div id="nav">
+        <ul id="navigation">
+            <li><a routerLink="/explist/{{festival.idFestival}}" title="aller à la section 3"
+                    routerLinkActive="active">Liste des exposants</a>
+            </li>
+            <li><a routerLink="" title="aller à la section 3" routerLinkActive="active">Réservations</a>
+            </li>
+        </ul>
+    </div>
+</body>

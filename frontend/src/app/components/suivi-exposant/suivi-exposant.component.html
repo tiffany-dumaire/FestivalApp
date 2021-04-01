@@ -1,1 +1,30 @@
-<p>suivi-exposant works!</p>
+<body>
+<div class="menu_i">
+    <h1 class="title">Liste des exposants</h1>
+  </div>
+<div id="tableau">
+    <table *ngIf="suiviexposants" id="exp">
+      <tr>
+
+        <th>Statut du suivi</th>
+        <th>Date de premier contact</th>
+        <th>Date du deuxième contact</th>
+        <th>Date du troisième contact</th>
+        <th>Commentaire</th>
+        <th>Plan(0 non, 1 oui)</th>
+      </tr>
+      <tr *ngFor="let suiviexposant of suiviexposants">
+
+        <td>{{suiviexposant.statutSuivi}}</td>
+        <td>{{suiviexposant.dateContact1.substr(0,10)}}</td>
+        <td>{{suiviexposant.dateContact2.substr(0,10)}}</td>
+        <td>{{suiviexposant.dateContact3.substr(0,10)}}</td>
+        <td>{{suiviexposant.commentaire}}</td>
+
+
+        <!--td><button type="button" class="btn btn-default active">Suivi</button></td-->
+
+      </tr>
+    </table>
+  </div>
+</body>

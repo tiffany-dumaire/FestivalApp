@@ -70,18 +70,18 @@ body{
     margin-left: 425px;
     padding: 0;
     text-align: center;
+    display: inline;
 }
 
   #navigation li {
     background: rgb(0, 20, 204) ;
     color: #fff ;
-    border: 1px solid rgb(21, 3, 99) ;
     margin-top: 10px; 
   }
 
   #navigation li a {
     display: block ;
-    background: rgb(9, 21, 128) ;
+    background: #0e7dc7;
     height: 60px;
     color: #fff ;
    

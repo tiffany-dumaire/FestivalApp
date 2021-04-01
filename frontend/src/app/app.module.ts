@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
 
 
@@ -42,6 +43,7 @@ import { CreateSocietyComponent } from './components/create-society/create-socie
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
+import { ReservationListComponent } from './service/reservation-list/reservation-list.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { FestivalDetailsComponent } from './components/festival-details/festival
     ControlMessageComponent,
     GameDetailsComponent,
     FestivalDetailsComponent,
+    ReservationListComponent,
    
     
   ],
@@ -88,7 +91,9 @@ import { FestivalDetailsComponent } from './components/festival-details/festival
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
+
   
   ],
   providers: [],

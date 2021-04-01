@@ -34,7 +34,7 @@ td{
     padding-top: 15px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #092368;
+    background-color: #092268b7;
     color: white;
     height: 30px;
     font-style:'Source Sans Pro', sans-serif;
@@ -72,5 +72,7 @@ td{
   body {
     font-family:'Source Sans Pro', sans-serif;
     margin:0;
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+background-size: cover;
   }
   

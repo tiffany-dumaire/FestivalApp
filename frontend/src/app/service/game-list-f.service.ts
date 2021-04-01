@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Game } from 'src/app/model/game';
-import { Festival } from 'src/app/model/festival'
 import { map } from 'rxjs/internal/operators/map';
 
 @Injectable({
