@@ -75,7 +75,7 @@ const routes: Routes = [
     path: "festivals", component: FestivalListComponent
   },
   {
-    path: "explist", component: ExposantListComponent
+    path: "explist/:idFestival", component: ExposantListComponent
   },
   {
     path: "gamelistexp", component: GameListExpComponent

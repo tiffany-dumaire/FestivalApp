@@ -1,15 +1,15 @@
 <body>
 <div class="menu_i">
-    <h1 class="title" *ngFor="let game of games | async">Jeu festival : {{game.nomJeu}}</h1>
+    <h1 *ngIf = "game" class="title" >Jeu festival : {{game.nomJeu}}</h1>
 </div>
 
     <div id="tableau">
-        <table *ngIf="games" id="gamess">
+        <table *ngIf="game" id="gamess">
           <tr>
            
              <th>LIEN NOTICE</th> 
           </tr>
-          <tr *ngFor="let game of games | async ">
+          <tr>
             
             
             <td>{{game.lienNotice}}</td>
@@ -20,12 +20,12 @@
         </div>
 
         <div id="tableau1">
-            <table *ngIf="games" id="gamess">
+            <table *ngIf="game" id="gamess">
               <tr>
                
                  <th>QUANTITE DE JEUX</th> 
               </tr>
-              <tr *ngFor="let game of games | async ">
+              <tr>
                 
                 
                 <td>{{game.quantiteExposee}}</td>
@@ -35,12 +35,12 @@
             </table>
             </div>
             <div id="tableau1">
-                <table *ngIf="games" id="gamess">
+                <table *ngIf="game" id="gamess">
                   <tr>
                    
                      <th>TYPE JEU</th> 
                   </tr>
-                  <tr *ngFor="let game of games | async ">
+                  <tr>
                     
                     
                     <td>{{game.idTypeJeu}}</td>
@@ -52,12 +52,12 @@
     
             
             <div id="tableau1">
-                <table *ngIf="games" id="gamess">
+                <table *ngIf="game" id="gamess">
                   <tr>
                    
                      <th>TABLES</th> 
                   </tr>
-                  <tr *ngFor="let game of games | async ">
+                  <tr >
                     
                     
                     <td>{{game.nbTable}}</td>

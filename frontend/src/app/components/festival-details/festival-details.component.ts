@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
+import { map, tap } from 'rxjs/operators';
 
 
 import { ActivatedRoute } from '@angular/router';
@@ -14,26 +14,35 @@ import { FestivalService } from 'src/app/service/festival.service';
 })
 export class FestivalDetailsComponent implements OnInit {
 
-  public festival = null;
+  @Input() public festival = null;
 
   constructor(private festivalService: FestivalService, private route: ActivatedRoute) { }
 
+
   ngOnInit(): void {
-   
+
     if (this.route.snapshot.paramMap.has('idFestival')) {
       const idFestival = this.route.snapshot.paramMap.get('idFestival');
       this.getFestivalById(idFestival);
     }
-  
+
   }
 
-  getFestivalById(idFestival) : void {
-    console.log('coucou');
-    this.festival = this.festivalService.getFestivalById(idFestival)
-      .pipe(
-               tap((festival) => { 
-            console.log(JSON.stringify(festival)); })
-      )
+  getFestivalById(idFestival): void {
+    console.log(idFestival);
+    this.festivalService.getFestivalById(idFestival)
+        .subscribe(
+        (festivalDTO) => { if (festivalDTO) { 
+          this.festival = festivalDTO; 
+          console.log(`festival=${JSON.stringify(this.festival)}`);
+        }}
+      );
+    // .pipe(
+    //   tap((festival) => {
+    //     this.typename = typeof festival;
+    //     console.log(JSON.stringify(festival));
+    //   })
+    // );
   }
 
 }

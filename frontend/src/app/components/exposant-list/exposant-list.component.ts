@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { ExposantListService } from '../../service/exposant-list.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { Societe } from 'src/app/model/societe';
 @Component({
   selector: 'app-exposant-list',
   templateUrl: './exposant-list.component.html',
@@ -9,18 +10,28 @@ import { ExposantListService } from '../../service/exposant-list.service';
 })
 
 export class ExposantListComponent implements OnInit {
-  public exposantlist;
 
-  constructor(private explist: ExposantListService) { }
+  @Input() exposants: Societe[] = null;
+
+
+  constructor(private explist: ExposantListService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getExposants();
+    if (this.route.snapshot.paramMap.has('idFestival')) {
+
+      const idFestival = this.route.snapshot.paramMap.get('idFestival');
+
+      this.getExposantsFestival(idFestival);
+    }
   }
 
-  getExposants(): void {
-    this.exposantlist = this.explist.getExposants().pipe(
-      tap((exposantlist) => { console.log(JSON.stringify(exposantlist)); })
-    )
+  getExposantsFestival(idFestival): void {
+    this.explist.getExposantsFestival(idFestival).subscribe(
+      (exposantsDTO) => { if (exposantsDTO) { 
+        this.exposants = exposantsDTO; 
+        //console.log(`festival=${JSON.stringify(this.festival)}`);
+      }}
+    );
 
   }
 }

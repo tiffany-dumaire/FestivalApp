@@ -4,21 +4,21 @@
   </div>
 
   <div id="tableau">
-    <table *ngIf="exposantlist" id="exp">
+    <table *ngIf="exposants" id="exp">
       <tr>
 
-        <th>Nom de la société</th>
-        <th>Adresse de la société</th>
+        <th>Nom de l'esxposant</th>
+        <th>Adresse de l'exposant</th>
         <th>Pays</th>
-        <th>Suivi Exposant</th>
+        <!--th>Suivi Exposant</th-->
       </tr>
-      <tr *ngFor="let exposant of exposantlist | async ">
+      <tr *ngFor="let exposant of exposants  ">
 
         <td>{{exposant.nomSociete}}</td>
         <td>{{exposant.adresse}}</td>
         <td>{{exposant.pays}}</td>
 
-        <td><button type="button" class="btn btn-default active">Suivi</button></td>
+        <!--td><button type="button" class="btn btn-default active">Suivi</button></td-->
 
       </tr>
     </table>

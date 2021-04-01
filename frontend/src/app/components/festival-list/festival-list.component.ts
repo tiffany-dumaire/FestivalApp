@@ -18,6 +18,7 @@ export class FestivalListComponent implements OnInit {
   }
 
   getFestivalsYear(): void {
+    
     this.festivalsy = this.festlist.getFestivalsYear().pipe(
       tap((festivalsy) => { console.log(JSON.stringify(festivalsy)); })
     )

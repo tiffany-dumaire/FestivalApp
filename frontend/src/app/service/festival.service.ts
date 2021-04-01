@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 import { Festival } from 'src/app/model/festival';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -35,8 +36,14 @@ export class FestivalService {
 
   }
 
- public getFestivalById(idFestival): Observable<Festival> {
+  public getFestivalById(idFestival): Observable<Festival> {
     var url = 'https://backend-festival-app.herokuapp.com/festival/all'
-    return this.http.get<Festival>(url + "/" + idFestival);
+    return this.http.get<Festival[]>(url + "/" + idFestival).pipe(
+      map((festivals: Festival[]) => {
+        if (festivals.length > 0) { return festivals[0]; }
+        else { return null; }
+      }
+      )
+    );
   }
 }

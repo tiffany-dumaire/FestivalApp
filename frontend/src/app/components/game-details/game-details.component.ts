@@ -12,14 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class GameDetailsComponent implements OnInit {
-  //@Input() game: Game = null;
+  @Input() game: Game = null;
   constructor(private gameListFService: GameListFService, private route: ActivatedRoute) { }
 
-  public games = null;
-  public toto = null;
-
   ngOnInit(): void {
-    console.log("details : init");
     if (this.route.snapshot.paramMap.has('idJeu') && this.route.snapshot.paramMap.has('idRes')) {
 
       const idJeu = this.route.snapshot.paramMap.get('idJeu');
@@ -31,10 +27,12 @@ export class GameDetailsComponent implements OnInit {
   }
   getGameDetails(idJeu, idReservation) {
 
-    this.games = this.gameListFService.getGameDetails(idJeu, idReservation)
-      .pipe(
-        tap((games) => { console.log(JSON.stringify(games)); })
-      )
+    this.gameListFService.getGameDetails(idJeu, idReservation)
+    .subscribe(
+      (gameDTO) => { if (gameDTO) { 
+        this.game = gameDTO; 
+      }}
+    );
     /*this.toto = this.gameListFService.getGameDetails(idJeu, idReservation).pipe(
         tap((gamedetail) => {
         console.log("coucou");

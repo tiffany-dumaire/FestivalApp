@@ -1,2 +1,9 @@
-<p>festival-details works!</p>
 <div *ngIf="festival">{{festival.nomFestival}}</div>
+<div>
+    <ul id="navigation">
+        <li><a routerLink="/explist/{{festival.idFestival}}" title="aller à la section 3" routerLinkActive="active">Liste des exposants</a>
+        </li>
+        <li><a routerLink="" title="aller à la section 3" routerLinkActive="active">Suivi exposants</a>
+        </li>
+    </ul>
+</div>
