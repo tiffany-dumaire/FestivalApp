@@ -4,7 +4,9 @@ import { tap } from 'rxjs/operators';
 import { Game } from 'src/app/model/game';
 import { ActivatedRoute } from '@angular/router';
 
-
+/**
+ * Game details composant
+ */
 @Component({
   selector: 'app-game-details',
   templateUrl: './game-details.component.html',
@@ -12,9 +14,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class GameDetailsComponent implements OnInit {
+ 
+ /**
+  * @type Game
+  * Attribut qui permet de faire l'affichage sur le html.
+  */
   @Input() game: Game = null;
   constructor(private gameListFService: GameListFService, private route: ActivatedRoute) { }
 
+  /**
+   * ngOnInit qui initialise les identifiants à mettre en pramaètre de la route.
+   */
   ngOnInit(): void {
     if (this.route.snapshot.paramMap.has('idJeu') && this.route.snapshot.paramMap.has('idRes')) {
 
@@ -25,6 +35,12 @@ export class GameDetailsComponent implements OnInit {
     }
 
   }
+  
+  /**
+   * Retourne les détails du jeu en dégéguant au service.
+   * @param idJeu 
+   * @param idReservation 
+   */
   getGameDetails(idJeu, idReservation) {
 
     this.gameListFService.getGameDetails(idJeu, idReservation)

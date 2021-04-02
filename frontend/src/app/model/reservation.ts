@@ -1,3 +1,6 @@
+/**
+ * Modèle pour la réservation
+ */
 export interface Reservation {
     idReservation: number,
     nbTableE1: number,

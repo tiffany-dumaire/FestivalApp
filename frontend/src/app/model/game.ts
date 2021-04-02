@@ -1,3 +1,6 @@
+/**
+ * Modèle pour le jeu
+ */
 export interface Game {
     idJeu: number;
     nomJeu: string;

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-
+/**
+ * Festival composant
+ */
 @Component({
   selector: 'app-festival',
   templateUrl: './festival.component.html',

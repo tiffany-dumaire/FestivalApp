@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Org home composant
+ */
 @Component({
   selector: 'app-org-home',
   templateUrl: './org-home.component.html',

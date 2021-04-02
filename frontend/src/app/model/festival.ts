@@ -1,3 +1,6 @@
+/**
+ * Modèle pour le festival
+ */
 export interface Festival {
     idFestival: number;
     nomFestival: string;

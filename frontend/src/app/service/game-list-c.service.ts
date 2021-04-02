@@ -5,24 +5,34 @@ import { Observable } from 'rxjs';
 import { Game } from 'src/app/model/game';
 import { Festival } from 'src/app/model/festival'
 
+/**
+ * Game list service
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GameListCService {
 
-constructor( private http: HttpClient ) { }
-getGamesEditor(): Observable<Game[]> {
-  //var url = 'http://localhost:3100/jeu/last/allbyfestival';
-  return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyeditor');
+  /**
+   * Construxteur de la classe
+   * @param http 
+   */
+  constructor(private http: HttpClient) { }
   
-
+  /**
+   * Jeu par éditeur
+   * @returns 
+   */
+  getGamesEditor(): Observable<Game[]> {
+    return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyeditor');
   }
 
+  /**
+   * Jeux par zone
+   * @returns 
+   */
   getGamesArea(): Observable<Game[]> {
-    //var url = 'http://localhost:3100/jeu/last/allbyfestival';
     return this.http.get<Game[]>('https://backend-festival-app.herokuapp.com/jeu/last/allbyzone');
-    
-  
-    }
+  }
 
 }

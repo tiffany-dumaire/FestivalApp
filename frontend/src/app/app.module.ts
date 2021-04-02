@@ -40,14 +40,14 @@ import { ReservedGameListComponent } from './components/reserved-game-list/reser
 import { CreateSocietyComponent } from './components/create-society/create-society.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
-import { ReservationListComponent } from './service/reservation-list/reservation-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RootNavComponent,
     LoginComponent,
-    
+
     AboutComponent,
     FestivalComponent,
     GameListFestivalComponent,
@@ -57,21 +57,21 @@ import { ReservationListComponent } from './service/reservation-list/reservation
     CreateAccountHComponent,
     CreateAccountAdComponent,
     CreateAccountOrgComponent,
-   
+
     AddGameComponent,
     ReservationsComponent,
     AdminHomeComponent,
     ExposantListComponent,
     GameListExpComponent,
-    OrgHomeComponent, 
+    OrgHomeComponent,
     SuiviExposantComponent,
     ReservedGameListComponent,
     CreateSocietyComponent,
     GameDetailsComponent,
     FestivalDetailsComponent,
-    ReservationListComponent,
-   
     
+
+
   ],
   imports: [
     BrowserModule,
@@ -88,7 +88,7 @@ import { ReservationListComponent } from './service/reservation-list/reservation
     FormsModule,
     MatCardModule
 
-  
+
   ],
   providers: [],
   bootstrap: [AppComponent]

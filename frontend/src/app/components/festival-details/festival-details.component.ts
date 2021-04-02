@@ -6,7 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { FestivalService } from 'src/app/service/festival.service';
 
-
+/**
+ * Festival details composant
+ */
 @Component({
   selector: 'app-festival-details',
   templateUrl: './festival-details.component.html',
@@ -14,11 +16,16 @@ import { FestivalService } from 'src/app/service/festival.service';
 })
 export class FestivalDetailsComponent implements OnInit {
 
+  /**
+   * Nous permet de récupérer la variable pour l'affichage.
+   */
   @Input() public festival = null;
 
   constructor(private festivalService: FestivalService, private route: ActivatedRoute) { }
 
-
+/**
+ * Ngoninit qui initialise le paramètre idFestival à ajouter dans la route.
+ */
   ngOnInit(): void {
 
     if (this.route.snapshot.paramMap.has('idFestival')) {
@@ -28,6 +35,10 @@ export class FestivalDetailsComponent implements OnInit {
 
   }
 
+  /**
+   * 
+   * @param idFestival Retourne un festival selon son identifiant, délégation au service.
+   */
   getFestivalById(idFestival): void {
     console.log(idFestival);
     this.festivalService.getFestivalById(idFestival)

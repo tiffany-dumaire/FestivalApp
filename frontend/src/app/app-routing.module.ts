@@ -30,7 +30,7 @@ import { FestivalDetailsComponent } from './components/festival-details/festival
 const routes: Routes = [
   {
     path: "login", component: LoginComponent,
-    
+
   },
   {
     path: "", component: FestivalComponent
@@ -93,7 +93,7 @@ const routes: Routes = [
   {
     path: "festivaldetails/:idFestival", component: FestivalDetailsComponent
   },
-  
+
 
 
 ];

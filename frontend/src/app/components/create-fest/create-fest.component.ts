@@ -5,81 +5,85 @@ import { FestivalService } from '../../service/festival.service';
 import { tap } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 
+/**
+ * Create Fest composant : créer un festival
+ */
 @Component({
   selector: 'app-create-fest',
   templateUrl: './create-fest.component.html',
   styleUrls: ['./create-fest.component.css'],
   providers: [FestivalService]
 })
+
 export class CreateFestComponent implements OnInit {
+  /**
+   * @type Festival[]: liste de festivals
+   */
   public festivals: Festival[];
+  
+  /**
+   * @type Festival: festival
+   */
   public festival: Festival;
+  
+  /**
+   * @type: FormGroup : Formulaire dans lequel on entre les valeurs
+   */
   public form: FormGroup;
 
+/**
+ * Constructeur du composant
+ * @param formBuilder 
+ * @param festivalService 
+ */
   constructor(private formBuilder: FormBuilder, private festivalService: FestivalService) {
   }
 
+  /**
+   * Ngoninit : on initialise les différents valeurs du formulaires
+   */
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nomFestival: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
       ]],
       annee: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+      
       ]],
       nbTableE1: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+        
       ]],
       nbTableE2: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+      
       ]],
       nbTableE3: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+      
       ]],
       m2E1: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+      
       ]],
       m2E2: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+       
       ]],
       m2E3: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+ 
       ]
       ],
       prixE1: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+     
       ]],
       prixE2: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+       
       ]],
       prixE3: ['', [
-        //Validators.required, 
-        //Validators.minLength(4), 
-        //Validators.maxLength(4)
+     
       ]]
     });
   }
 
+  /**
+   * Appelle la methode du service pour créer un festival
+   * @param form 
+   */
   addFestival(form) {
     this.festivalService.addFestival(this.form.value)
       .subscribe({
@@ -90,7 +94,10 @@ export class CreateFestComponent implements OnInit {
       })
   }
 
-
+/**
+ * Enlève les valeurs du formulaires si elles ont été rentrées.
+ * @param form 
+ */
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -110,24 +117,5 @@ export class CreateFestComponent implements OnInit {
     }
   }
 
-  /*onSubmit(
-    nomFestival: string, 
-    annee: number,
-    nbTableE1: number,
-    nbTableE2: number, 
-    nbTableE3: number,
-    m2E1: number,
-    m2E2: number,
-    m2E3: number,
-    prixE1: number,
-    prixE2: number,
-    prixE3: number
-    ) {
-   
-      this.festivalService.addFestival({nomFestival, annee, nbTableE1, nbTableE2, nbTableE3, m2E1, m2E2, m2E3, prixE1, prixE2, prixE3} as Festival).subscribe(festival => {
-        this.festivals.push(festival);
-      })
-      
-  }*/
 
 }

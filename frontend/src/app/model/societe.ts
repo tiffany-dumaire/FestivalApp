@@ -1,4 +1,6 @@
-
+/**
+ * Modèle pour la société
+ */
 export class Societe {
     idSociete: number;
     nomSociete: string;

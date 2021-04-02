@@ -1,3 +1,6 @@
+/**
+ * Modèle pour les jeux réservés.
+ */
 export interface JeuxReserves {
     idJeu: number,
     idReservation: number,

@@ -1,4 +1,7 @@
 
+/**
+ * Modèle pour le suivi d'exposants
+ */
 export class SuiviExposant {
     idSociete: number;
     idFestival: number;
