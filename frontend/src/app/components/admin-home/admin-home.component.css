@@ -1,0 +1,125 @@
+
+td{
+  color: #0e7dc7;
+  font-size: 18px;
+}
+
+#fests {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#fests td{  
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+}
+
+#fests tr:nth-child(even){background-color:  rgba(233, 229, 229, 0.486);}
+
+#fests tr:hover {background-color: #ddd;}
+
+#fests th {
+  padding-top: 15px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0d78c0b9;
+  color: white;
+  height: 40px;
+  font-style:'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;  
+}
+
+#tableau{
+  margin-top: 60px;
+}
+
+button {
+  background-color: #0e7dc7be;
+  border-radius:28px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:13px 37px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+  font-weight: bold;
+}
+button:hover {
+  background-color:#079cffea;
+}
+button:active {
+  position:relative;
+  top:1px;
+}
+
+body{
+  background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#navigation {
+    width: 400px;
+    list-style: none;
+    margin-top: 50px;
+    margin-left: 425px;
+    padding: 0;
+    text-align: center;
+    display: inline;
+}
+
+  #navigation li {
+    background: rgb(0, 20, 204) ;
+    color: #fff ;
+    margin-top: 10px; 
+  }
+
+  #navigation li a {
+    display: block ;
+    background-color: #0e7dc7be;
+    height: 60px;
+    color: #fff ;
+   
+    line-height: 1em ;
+    text-align: center ;
+    text-decoration: none ;
+    padding: 4px 0 ;
+    line-height: 60px;
+    font-size: 28px;
+  }
+  
+  #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
+    background: rgb(4, 9, 90) ;
+    color: white; 
+  }
+
+  .nav{
+      margin-top: 70px;
+  }
+
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .menu{
+    margin-top: 85px;
+    text-align: center;   
+  }
+  
+  .title1{
+    font-size: 90px;
+    font-weight: 900;
+   margin-top: 50px;;
+    color: #0e7dc7;
+    margin-bottom: 30 px;
+  }
+
+  
+
+

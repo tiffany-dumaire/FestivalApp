@@ -1,0 +1,62 @@
+.menu_i{
+    margin-top: 70px;
+    text-align: center; 
+    
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 900;
+    margin: 50px 40px 40px;
+    color: rgb(3, 7, 71);
+}
+#navigation {
+    width: 400px;
+    list-style: none;
+    margin-top: 50px;
+    margin-left: 425px;
+    padding: 0;
+    text-align: center;
+}
+
+  #navigation li {
+    background: rgb(0, 20, 204) ;
+    color: #fff ;
+    border: 1px solid rgb(21, 3, 99) ;
+    margin-top: 10px;
+    
+    
+   
+  }
+
+  #navigation li a {
+    display: block ;
+    background: rgb(9, 54, 151) ;
+    height: 60px;
+    color: #fff ;
+   
+    line-height: 1em ;
+    text-align: center ;
+    text-decoration: none ;
+    padding: 4px 0 ;
+    line-height: 60px;
+    font-size: 28px;
+  
+  }
+  #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
+    background: rgb(4, 9, 90) ;
+    color: white;
+  
+  }
+
+  .nav{
+      margin-top: 35px;
+  }
+
+  body{
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  
+

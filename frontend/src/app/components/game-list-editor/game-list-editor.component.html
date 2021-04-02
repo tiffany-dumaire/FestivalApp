@@ -1,22 +1,21 @@
-<div class="menu_i">
-    <h1 class="title">Liste des jeux du festival</h1>
-</div>
+<body>
+  <div class="menu_i">
+    <h1 class="title">Jeux du festival par éditeur</h1>
+  </div>
 
-<!--div ng-app="myApp" ng-controller="customersCtrl"-->
-
-    <!--table>
-      <tr ng-repeat="x in names">
-        <td>{{ x.Name }}</td>
-        <td>{{ x.Country }}</td>
+  <div id="tableau">
+    <table *ngIf="games" id="gamess">
+      <tr>
+        <th>JEU</th>
+        <th>EDITEUR</th>
+        <th>DETAILS</th>
+      </tr>
+      <tr *ngFor="let game of games | async ">
+        <td>{{game.nomJeu}}</td>
+        <td>{{game.nomSociete}}</td>
+        <td><button routerLink="/gamedetails/{{game.idJeu}}/{{game.idReservation}}"
+          routerLinkActive="active">Détails</button></td>
       </tr>
     </table>
-    
-    </div>
-    
-    <script>
-    var app = angular.module('myApp', []);
-    /*app.controller('customersCtrl', function($scope, $http) {
-      $http.get("customers.php")
-      .then(function (response) {$scope.names = response.data.records;});
-    });*/
-    </script-->
+  </div>
+</body>

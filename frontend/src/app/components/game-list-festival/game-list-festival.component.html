@@ -1,23 +1,30 @@
-
-<div class="menu_i">
+<body>
+  <div class="menu_i">
     <h1 class="title">Liste des jeux du festival</h1>
-</div>
+  </div>
 
-<!--div ng-app="myApp" ng-controller="customersCtrl"-->
+  <div id="tableau">
+    <table *ngIf="games" id="gamess">
+      <tr>
+        <th>JEU</th>
+        <th>JOUEURS MINIMUM</th>
+        <th>JOUEURS MAXIMUM</th>
+        <th>PEGI</th>
+        <th>DUREE</th>
+        <th>DETAILS</th>
+      </tr>
+      <tr *ngFor="let game of games | async ">
 
-    <!--table>
-      <tr ng-repeat="x in names">
-        <td>{{ x.Name }}</td>
-        <td>{{ x.Country }}</td>
+        <td>{{game.nomJeu}}</td>
+        <td>{{game.nbJoueurMin}}</td>
+        <td>{{game.nbJoueurMax}}</td>
+        <td>{{game.ageMin}}</td>
+        <td>{{game.duree}}</td>
+
+        <td><button routerLink="/gamedetails/{{game.idJeu}}/{{game.idReservation}}"
+            routerLinkActive="active">Détails</button></td>
+
       </tr>
     </table>
-    
-    </div>
-    
-    <script>
-    var app = angular.module('myApp', []);
-    /*app.controller('customersCtrl', function($scope, $http) {
-      $http.get("customers.php")
-      .then(function (response) {$scope.names = response.data.records;});
-    });*/
-    </script-->
+  </div>
+</body>

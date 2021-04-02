@@ -3,6 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
+/**
+ * Rouut nav composant : barre de navigation agular material.
+ */
 @Component({
   selector: 'app-root-nav',
   templateUrl: './root-nav.component.html',
@@ -10,12 +13,19 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class RootNavComponent {
 
+  /**
+   * 
+   */
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  /**
+   * Constructeur de la classe
+   * @param breakpointObserver 
+   */
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
 }

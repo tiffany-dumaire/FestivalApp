@@ -1,0 +1,78 @@
+.menu_i{
+  margin-top: 70px;
+  text-align: center;  
+}
+
+.title{
+  font-size: 70px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+  color: rgb(3, 7, 71);
+}
+
+td{
+    color: rgb(16, 28, 139);
+    font-size: 18px;
+}
+
+#exp {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #exp td{ 
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #exp tr:nth-child(even){background-color:  rgba(255, 255, 255, 0.993);}
+  
+  #exp tr:hover {background-color: #ddd;}
+  
+  #exp th {
+    padding-top: 15px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #092268b7;
+    color: white;
+    height: 30px;
+    font-style:'Source Sans Pro', sans-serif;
+    font-size: 20px; 
+  }
+
+  #tableau{
+    margin-top: 50px;
+  }
+
+  button {
+    background-color:  #124df0;
+    border-radius:28px;
+    border:1px solid #124df0;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:13px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color:#2abf92;
+  }
+  
+  button:active {
+    position:relative;
+    top:1px;
+  }
+  
+  body {
+    font-family:'Source Sans Pro', sans-serif;
+    margin:0;
+    background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+background-size: cover;
+  }
+  

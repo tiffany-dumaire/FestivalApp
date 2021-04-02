@@ -1,0 +1,51 @@
+<body>
+  <div class="menu_i">
+    <h1 *ngIf="game" class="title">Jeu festival : {{game.nomJeu}}</h1>
+  </div>
+
+  <div id="tableau">
+    <table *ngIf="game" id="gamess">
+      <tr>
+
+        <th>LIEN NOTICE</th>
+      </tr>
+      <tr>
+        <td>{{game.lienNotice}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="tableau1">
+    <table *ngIf="game" id="gamess">
+      <tr>
+
+        <th>QUANTITE DE JEUX</th>
+      </tr>
+      <tr>
+        <td>{{game.quantiteExposee}}</td>
+
+      </tr>
+    </table>
+  </div>
+  <div id="tableau1">
+    <table *ngIf="game" id="gamess">
+      <tr>
+        <th>TYPE JEU</th>
+      </tr>
+      <tr>
+        <td>{{game.idTypeJeu}}</td>
+      </tr>
+    </table>
+  </div>
+  <div id="tableau1">
+    <table *ngIf="game" id="gamess">
+      <tr>
+        <th>TABLES</th>
+      </tr>
+      <tr>
+        <td>{{game.nbTable}}</td>
+      </tr>
+    </table>
+  </div>
+
+</body>

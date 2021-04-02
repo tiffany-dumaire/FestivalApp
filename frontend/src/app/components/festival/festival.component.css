@@ -1,34 +1,42 @@
+.menu{
+  margin-top: 20px;
+  text-align: center;   
+}
 
+.title1{
+  font-size: 90px;
+  font-weight: 900;
+ margin-top: 50px;;
+  color: #0e7dc7;
+  margin-bottom: 30 px;
+}
 
 .menu_i{
-    margin-top: 70px;
+    margin-top: 80px;
     text-align: center; 
-    
 }
 
 .title{
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 900;
     margin: 50px 40px 40px;
-    color: rgba(12, 12, 14, 0.911);
+    color: rgb(15, 24, 78);
 }
+
 #navigation {
-    width: 400px;
+    width: 500px;
     list-style: none;
     margin-top: 50px;
-    margin-left: 465px;
+    margin-left: 380px;
     padding: 0;
     text-align: center;
 }
 
   #navigation li {
-    background: rgb(0, 20, 204) ;
+    background: rgb(239, 240, 253) ;
     color: #fff ;
-    border: 1px solid rgb(21, 3, 99) ;
-    margin-top: 10px;
     
-    
-   
+    margin-top: 10px;   
   }
 
   #navigation li a {
@@ -36,23 +44,24 @@
     background: rgb(5, 3, 80) ;
     height: 80px;
     color: #fff ;
-   
-    line-height: 1em ;
+    margin-top: 30px;
+    line-height: 50;
     text-align: center ;
     text-decoration: none ;
     padding: 4px 0 ;
     line-height: 60px;
-    font-size: 28px;
-  
+    font-size: 28px; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
   }
+  
   #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
     background: rgb(4, 9, 90) ;
     color: white;
-  
+    
   }
 
   .nav{
-      margin-top: 35px;
+      margin-top: 60px;
   }
 
   body{

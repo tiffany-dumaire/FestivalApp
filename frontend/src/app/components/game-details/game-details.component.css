@@ -1,0 +1,63 @@
+.menu_i{
+    margin-top: 70px;
+    text-align: center; 
+    
+  }
+  
+  .title{
+    font-size: 70px;
+    font-weight: 900;
+    margin: 50px 40px 40px;
+    color: rgb(3, 7, 71);
+  }
+  
+  td{
+      color:  #0e7dc7;
+      font-size: 18px;
+  }
+  
+  #gamess {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #gamess td{
+     
+      padding: 18px;
+      text-align: center;
+      font-weight: bold;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+    
+    }
+    
+    #gamess tr:nth-child(even){background-color:  rgba(233, 229, 229, 0.486);}
+    
+    #gamess tr:hover {background-color: #ddd;}
+    
+    #gamess th {
+      padding-top: 15px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #0e7dc7be;
+      color: white;
+      height: 30px;
+      font-style:'Source Sans Pro', sans-serif;
+      font-size: 18px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      
+      
+    }
+  
+    #tableau{
+      margin-top: 60px;
+    }
+
+    #tableau1{
+        margin-top: 10px;
+      }
+
+      body{
+        background: url('../../../assets/oui.PNG') no-repeat center center fixed;
+        background-size: cover;
+      }

@@ -6,11 +6,31 @@ import { AboutComponent } from './components/about/about.component';
 import { GameListFestivalComponent } from './components/game-list-festival/game-list-festival.component';
 import { GameListAreaComponent } from './components/game-list-area/game-list-area.component';
 import { GameListEditorComponent } from './components/game-list-editor/game-list-editor.component';
+import { CreateFestComponent } from './components/create-fest/create-fest.component';
+import { CreateAccountHComponent } from './components/create-account-h/create-account-h.component';
+import { CreateAccountAdComponent } from './components/create-account-ad/create-account-ad.component';
+import { CreateAccountOrgComponent } from './components/create-account-org/create-account-org.component';
+
+import { AddGameComponent } from './components/add-game/add-game.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
+import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
+import { OrgHomeComponent } from './components/org-home/org-home.component';
+import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
+import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
+import { CreateSocietyComponent } from './components/create-society/create-society.component';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
+
+
+
+
 
 const routes: Routes = [
   {
     path: "login", component: LoginComponent,
-    
+
   },
   {
     path: "", component: FestivalComponent
@@ -26,7 +46,55 @@ const routes: Routes = [
   },
   {
     path: "gamelisteditor", component: GameListEditorComponent
-  }
+  },
+  {
+    path: "createfest", component: CreateFestComponent
+  },
+  {
+    path: "createacch", component: CreateAccountHComponent
+  },
+  {
+    path: "createaccad", component: CreateAccountAdComponent
+  },
+  {
+    path: "createaccorg", component: CreateAccountOrgComponent
+  },
+
+  {
+    path: "addgame", component: AddGameComponent
+  },
+  {
+    path: "reservations/:idFestival", component: ReservationsComponent
+  },
+  {
+    path: "adminhome", component: AdminHomeComponent
+  },
+  {
+    path: "explist/:idFestival", component: ExposantListComponent
+  },
+  {
+    path: "gamelistexp", component: GameListExpComponent
+  },
+  {
+    path: "orghome", component: OrgHomeComponent
+  },
+  {
+    path: "suiviexposant/:idFestival/:idSociete", component: SuiviExposantComponent
+  },
+  {
+    path: "jeuxreserves", component: ReservedGameListComponent
+  },
+  {
+    path: "creersociete", component: CreateSocietyComponent
+  },
+  {
+    path: "gamedetails/:idJeu/:idRes", component: GameDetailsComponent
+  },
+  {
+    path: "festivaldetails/:idFestival", component: FestivalDetailsComponent
+  },
+
+
 
 ];
 

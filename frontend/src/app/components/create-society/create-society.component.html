@@ -1,0 +1,36 @@
+<body>
+  <div class="menu_i">
+    <h1 class="title">Créer une société</h1>
+  </div>
+  <div class="form-style-5">
+
+    <div class="legendf">
+      <legend> Créer une société</legend>
+    </div>
+    <form name="form" [formGroup]="form" (submit)="addSociete(form)" #festivalForm="ngForm">
+      <div class="form-group">
+        <input type="text" name="nomSociete" placeholder="Nom de la société" formControlName="nomSociete">
+      </div>
+      <div class="form-group">
+        <input type="email" name="annee" placeholder="Adresse de la société" formControlName="adresse">
+      </div>
+      <div class="form-group">
+        <input type="email" name="pays" placeholder="Pays de la société" formControlName="pays">
+      </div>
+      <div id="global">
+        <div class="form-group" id="right">
+          <label id="edit" for="isEditeur">Editeur</label>
+          <input type="checkbox" id="isEditeur" name="editeur" placeholder="Editeur" formControlName="editeur">
+        </div>
+        <div class="form-group" id="left">
+          <label id="exp" for="isExposant">Exposant</label>
+          <input type="checkbox" class=exp id="isExposant" name="Exposant" placeholder="Exposant"
+            formControlName="exposant">
+        </div>
+      </div>
+      <div id="sub">
+        <input type="submit" id="sub" value="Créer une société">
+      </div>
+    </form>
+  </div>
+</body>

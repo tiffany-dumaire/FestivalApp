@@ -1,0 +1,27 @@
+<body>
+  <div class="menu_i">
+    <h1 class="title">Liste des exposants</h1>
+  </div>
+
+  <div id="tableau">
+    <table *ngIf="exposants" id="exp">
+      <tr>
+
+        <th>Nom de l'exposant</th>
+        <th>Adresse de l'exposant</th>
+        <th>Pays</th>
+        <th>Suivi Exposant</th>
+      </tr>
+      <tr *ngFor="let exposant of exposants">
+
+        <td>{{exposant.nomSociete}}</td>
+        <td>{{exposant.adresse}}</td>
+        <td>{{exposant.pays}}</td>
+
+        <td><button routerLink="/suiviexposant/{{exposant.idFestival}}/{{exposant.idSociete}}" routerLinkActive="active"
+            type="button" class="btn btn-default active">Suivi</button></td>
+
+      </tr>
+    </table>
+  </div>
+</body>

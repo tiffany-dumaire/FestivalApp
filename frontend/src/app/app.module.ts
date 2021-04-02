@@ -11,14 +11,35 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
+
 
 import { AboutComponent } from './components/about/about.component';
 import { FestivalComponent } from './components/festival/festival.component';
 import { GameListFestivalComponent } from './components/game-list-festival/game-list-festival.component';
 import { GameListAreaComponent } from './components/game-list-area/game-list-area.component';
 import { GameListEditorComponent } from './components/game-list-editor/game-list-editor.component';
+import { CreateFestComponent } from './components/create-fest/create-fest.component';
+import { CreateAccountHComponent } from './components/create-account-h/create-account-h.component';
+import { CreateAccountAdComponent } from './components/create-account-ad/create-account-ad.component';
+import { CreateAccountOrgComponent } from './components/create-account-org/create-account-org.component';
+
+
+import { AddGameComponent } from './components/add-game/add-game.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { ExposantListComponent } from './components/exposant-list/exposant-list.component';
+import { GameListExpComponent } from './components/game-list-exp/game-list-exp.component';
+import { OrgHomeComponent } from './components/org-home/org-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SuiviExposantComponent } from './components/suivi-exposant/suivi-exposant.component';
+import { FormsModule } from '@angular/forms';
+import { ReservedGameListComponent } from './components/reserved-game-list/reserved-game-list.component';
+import { CreateSocietyComponent } from './components/create-society/create-society.component';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { FestivalDetailsComponent } from './components/festival-details/festival-details.component';
 
 
 @NgModule({
@@ -26,14 +47,31 @@ import { GameListEditorComponent } from './components/game-list-editor/game-list
     AppComponent,
     RootNavComponent,
     LoginComponent,
-    HomeComponent,
+
     AboutComponent,
     FestivalComponent,
     GameListFestivalComponent,
     GameListAreaComponent,
     GameListEditorComponent,
-   
+    CreateFestComponent,
+    CreateAccountHComponent,
+    CreateAccountAdComponent,
+    CreateAccountOrgComponent,
+
+    AddGameComponent,
+    ReservationsComponent,
+    AdminHomeComponent,
+    ExposantListComponent,
+    GameListExpComponent,
+    OrgHomeComponent,
+    SuiviExposantComponent,
+    ReservedGameListComponent,
+    CreateSocietyComponent,
+    GameDetailsComponent,
+    FestivalDetailsComponent,
     
+
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +82,13 @@ import { GameListEditorComponent } from './components/game-list-editor/game-list
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCardModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
